@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row">
+
+      <!-- Navigation -->
+      <div class="col-sm-3 px-1 sticky-top bg-white h-100">
+          <div class="py-2 sticky-top flex-grow-1">
+              <div class="nav flex-sm-column">
+                <a href="#" class="nav-link text-dark d-none d-sm-inline current">Samuel DeBartolo</a>
+                <a href="#{{project.id}}" *ngFor="let project of projects" class="nav-link text-secondary">{{project.name}}</a>
+              </div>
+          </div>
+      </div>
+      <!-- End Navigation -->
+
+      <!-- Page Content -->
+      <div class="col">
+        <div *ngIf="projects && projects.length">
+          <div *ngFor="let project of projects" [id]="project.id">
+            <h1>{{ project.name }}</h1>
+            <p>{{ project.description }}</p>
+            <p>{{ project.date }}</p>
+            <img *ngFor="let img of project.images" [defaultImage]="defaultImageUrl" [lazyLoad]="img.src" width="{{img.width}}" height="{{img.height}}" class="img-fluid">
+          </div>
+        </div>
+      </div>
+      <!-- End Page Content -->
+
+  </div>
+</div>
