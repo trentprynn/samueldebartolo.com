@@ -1,11 +1,3 @@
-// set a minimum width and height for
-// responsive images so the user does not get
-// reflow on initial load
-.img-fluid {
-  min-width: 300px;
-  min-height: 200px;
-}
-
 // animate lazy load image transition
 img.ng-lazyloaded {
   animation: fadein 1s;
