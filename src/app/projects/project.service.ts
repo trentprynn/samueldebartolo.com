@@ -11,13 +11,8 @@ import { Project } from './project';
 export class ProjectService {
 
   private projectsUrl = 'api/projects/projects.json'
-  private defaultProjectImageUrl = 'assets/images/default/default.jpg'
 
   constructor(private http: HttpClient) { }
-
-  getDefaultProjectImage(): string {
-    return this.defaultProjectImageUrl;
-  }
 
   getProjects(): Observable<Project[]> {
     return this.http.get<Project[]>(this.projectsUrl)

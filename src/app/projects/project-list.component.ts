@@ -22,8 +22,5 @@ export class ProjectListComponent implements OnInit {
         this.projects = projects;
       }
     })
-
-    // setup default image that is used while images are lazy loading
-    this.defaultImageUrl = this.projectService.getDefaultProjectImage();
   }
 }
