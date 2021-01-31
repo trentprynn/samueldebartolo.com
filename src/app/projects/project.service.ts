@@ -21,6 +21,14 @@ export class ProjectService {
                 );
   }
 
+  getDefaultProjectImage(): any {
+    return {
+      "src": "assets/images/default/default.jpg",
+      "width": "1600",
+      "height": "900"
+    };
+  }
+
   private handleError(err: HttpErrorResponse) {
     // in a real world app, we may send the server to some remote logging infrastructure
     // instead of just logging it to the console

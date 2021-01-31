@@ -1,10 +1,12 @@
+import { Image } from './image';
+
 export interface IProject {
     id: number,
     name: string,
     start: Date,
     end: Date,
     description: string,
-    imageUrls: string[]
+    images: Image[]
 }
 
 export class Project implements IProject {
@@ -13,5 +15,5 @@ export class Project implements IProject {
     start: Date;
     end: Date;
     description: string;
-    imageUrls: string[];
+    images: Image[];
 }

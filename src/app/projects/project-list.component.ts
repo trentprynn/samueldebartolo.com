@@ -10,7 +10,7 @@ import { ProjectService } from './project.service';
 })
 export class ProjectListComponent implements OnInit {
 
-  defaultImageUrl: string;
+  defaultImage: any;
   projects: Project[] = [];
 
   constructor(private projectService: ProjectService) { }
@@ -22,5 +22,8 @@ export class ProjectListComponent implements OnInit {
         this.projects = projects;
       }
     })
+
+    // setup default image that is used while images are lazy loading
+    this.defaultImage = this.projectService.getDefaultProjectImage();
   }
 }
