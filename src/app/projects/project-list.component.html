@@ -17,8 +17,6 @@
         <div *ngIf="projects && projects.length">
           <div *ngFor="let project of projects" [id]="project.id">
             <h1>{{ project.name }}</h1>
-            <p>{{ project.description }}</p>
-            <p>{{ project.date }}</p>
             <img *ngFor="let img of project.images" class="img-fluid" [defaultImage]="defaultImage.src" [lazyLoad]="img.src" [width]="img.width" [height]="img.height">
           </div>
         </div>
