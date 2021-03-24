@@ -1,7 +1,41 @@
-[{
-    "id": 0,
+[
+  {
+    "id": 1,
+    "name": "Sanctuary",
+    "description": "Sanctuary Description Placeholder",
+    "date": "March 3, 2003",
+    "images": [
+      {
+        "src": "assets/images/sanctuary/1.jpg",
+        "width": "1728",
+        "height": "1152"
+      },
+      {
+        "src": "assets/images/sanctuary/2.jpg",
+        "width": "1728",
+        "height": "1152"
+      },
+      {
+        "src": "assets/images/sanctuary/3.jpg",
+        "width": "1728",
+        "height": "1152"
+      },
+      {
+        "src": "assets/images/sanctuary/4.jpg",
+        "width": "1728",
+        "height": "1145"
+      },
+      {
+        "src": "assets/images/sanctuary/5.jpg",
+        "width": "1728",
+        "height": "1152"
+      }
+    ]
+  },
+  {
+    "id": 2,
     "name": "Bisbee Community Center",
-    "description": "Bisbee Community Center Description",
+    "description": "Bisbee Community Center Description Placeholder",
     "date": "January 1, 2001",
     "images": [
       {
@@ -22,9 +56,9 @@
     ]
   },
   {
-    "id": 1,
+    "id": 3,
     "name": "Chihuahuita Vista",
-    "description": "Chihuahuita Vista Description",
+    "description": "Chihuahuita Vista Description Placeholder",
     "date": "February 2, 2002",
     "images": [
       {
@@ -46,52 +80,6 @@
         "src": "assets/images/chihuahuita_vista/4.jpg",
         "width": "3600",
         "height": "2025"
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Paper Module",
-    "description": "Paper Module Description",
-    "date": "April 4, 2004",
-    "images": [
-      {
-        "src": "assets/images/paper_module/1.jpg",
-        "width": "3400",
-        "height": "1700"
-      },
-      {
-        "src": "assets/images/paper_module/2.jpg",
-        "width": "3400",
-        "height": "1700"
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Thermal Bath",
-    "description": "Thermal Bath Description",
-    "date": "May 5, 2005",
-    "images": [
-      {
-        "src": "assets/images/thermal_bath/1.jpg",
-        "width": "3400",
-        "height": "1700"
-      },
-      {
-        "src": "assets/images/thermal_bath/2.jpg",
-        "width": "3400",
-        "height": "1700"
-      },
-      {
-        "src": "assets/images/thermal_bath/3.jpg",
-        "width": "3400",
-        "height": "1700"
-      },
-      {
-        "src": "assets/images/thermal_bath/4.jpg",
-        "width": "3400",
-        "height": "1700"
       }
     ]
   }
