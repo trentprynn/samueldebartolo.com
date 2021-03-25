@@ -6,7 +6,7 @@
           <div class="py-2 sticky-top flex-grow-1">
               <div class="nav flex-sm-column">
                 <a href="#" class="nav-link text-dark d-none d-sm-inline current">Samuel DeBartolo</a>
-                <a href="#{{project.id}}" *ngFor="let project of projects" class="nav-link text-secondary">{{project.name}}</a>
+                <a href="#{{project.name | removeWhiteSpace}}" *ngFor="let project of projects" class="nav-link text-secondary">{{project.name}}</a>
               </div>
           </div>
       </div>
@@ -15,7 +15,7 @@
       <!-- Page Content -->
       <div class="col">
         <div *ngIf="projects && projects.length">
-          <div *ngFor="let project of projects" [id]="project.id">
+          <div *ngFor="let project of projects" [id]="project.name | removeWhiteSpace">
             <h1>{{ project.name }}</h1>
             <img *ngFor="let img of project.images" class="img-fluid" [defaultImage]="defaultImage.src" [lazyLoad]="img.src" [width]="img.width" [height]="img.height">
           </div>
