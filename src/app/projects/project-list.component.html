@@ -15,9 +15,11 @@
       <!-- Page Content -->
       <div class="col">
         <div *ngIf="projects && projects.length">
-          <div *ngFor="let project of projects" [id]="project.name | removeWhiteSpace">
+          <div *ngFor="let project of projects" class="pb-3" [id]="project.name | removeWhiteSpace">
             <h1>{{ project.name }}</h1>
-            <img *ngFor="let img of project.images" class="img-fluid" [defaultImage]="defaultImage.src" [lazyLoad]="img.src" [width]="img.width" [height]="img.height">
+            <div *ngFor="let img of project.images" class="pb-3">
+              <img class="img-fluid" [defaultImage]="defaultImage.src" [lazyLoad]="img.src" [width]="img.width" [height]="img.height">
+            </div>
           </div>
         </div>
       </div>
