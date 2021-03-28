@@ -1,39 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta property="og:title" content="Samuel DeBartolo"/>
-  <meta property="og:image" content="https://www.samueldebartolo.com/assets/images/default/default.jpg"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Samuel DeBartolo</title>
-  <base href="/">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!-- Start Single Page Apps for GitHub Pages -->
-  <script type="text/javascript">
-    // Single Page Apps for GitHub Pages
-    // MIT License
-    // https://github.com/rafgraph/spa-github-pages
-    // This script checks to see if a redirect is present in the query string,
-    // converts it back into the correct url and adds it to the
-    // browser's history using window.history.replaceState(...),
-    // which won't cause the browser to attempt to load the new url.
-    // When the single page app is loaded further down in this file,
-    // the correct url will be waiting in the browser's history for
-    // the single page app to route accordingly.
-    (function(l) {
-      if (l.search[1] === '/' ) {
-        var decoded = l.search.slice(1).split('&').map(function(s) { 
-          return s.replace(/~and~/g, '&')
-        }).join('?');
-        window.history.replaceState(null, null,
-            l.pathname.slice(0, -1) + decoded + l.hash
-        );
-      }
-    }(window.location))
-  </script>
-  <!-- End Single Page Apps for GitHub Pages -->
-<link rel="stylesheet" href="styles.50c54151c9033921a81e.css"></head>
-<body>
-  <app-root></app-root>
-<script src="runtime-es2015.a4dadbc03350107420a4.js" type="module"></script><script src="runtime-es5.a4dadbc03350107420a4.js" nomodule defer></script><script src="polyfills-es5.e7dcdbff0004c758b6dc.js" nomodule defer></script><script src="polyfills-es2015.13bb9dfcef7225695457.js" type="module"></script><script src="main-es2015.57435811b7e21498b9fc.js" type="module"></script><script src="main-es5.57435811b7e21498b9fc.js" nomodule defer></script></body>
+    <head>
+        <meta charset="utf-8"/>
+        <meta property="og:title" content="Samuel DeBartolo"/>
+        <meta property="og:image" content="https://www.samueldebartolo.com/assets/images/default/default.jpg"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Samuel DeBartolo</title>
+        <base href="/"/>
+        <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+        <!-- Start Single Page Apps for GitHub Pages -->
+        <script type="text/javascript">
+            // Single Page Apps for GitHub Pages
+            // MIT License
+            // https://github.com/rafgraph/spa-github-pages
+            // This script checks to see if a redirect is present in the query string,
+            // converts it back into the correct url and adds it to the
+            // browser's history using window.history.replaceState(...),
+            // which won't cause the browser to attempt to load the new url.
+            // When the single page app is loaded further down in this file,
+            // the correct url will be waiting in the browser's history for
+            // the single page app to route accordingly.
+            ;(function (l) {
+                if (l.search[1] === '/') {
+                    var decoded = l.search
+                        .slice(1)
+                        .split('&')
+                        .map(function (s) {
+                            return s.replace(/~and~/g, '&')
+                        })
+                        .join('?')
+                    window.history.replaceState(
+                        null,
+                        null,
+                        l.pathname.slice(0, -1) + decoded + l.hash
+                    )
+                }
+            })(window.location)
+        </script>
+        <!-- End Single Page Apps for GitHub Pages -->
+    <link rel="stylesheet" href="styles.50c54151c9033921a81e.css"></head>
+    <body>
+        <app-root></app-root>
+    <script src="runtime-es2015.a4dadbc03350107420a4.js" type="module"></script><script src="runtime-es5.a4dadbc03350107420a4.js" nomodule defer></script><script src="polyfills-es5.e7dcdbff0004c758b6dc.js" nomodule defer></script><script src="polyfills-es2015.13bb9dfcef7225695457.js" type="module"></script><script src="main-es2015.3aa3a7b81de03e001f0b.js" type="module"></script><script src="main-es5.3aa3a7b81de03e001f0b.js" nomodule defer></script></body>
 </html>
