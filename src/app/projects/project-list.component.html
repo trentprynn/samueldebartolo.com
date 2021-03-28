@@ -17,6 +17,7 @@
         <div *ngIf="projects && projects.length">
           <div *ngFor="let project of projects" class="pb-3" [id]="project.name | removeWhiteSpace">
             <h1>{{ project.name }}</h1>
+            <p>{{ project.description }}</p>
             <div *ngFor="let img of project.images" class="pb-3">
               <img class="img-fluid" [defaultImage]="defaultImage.src" [lazyLoad]="img.src" [width]="img.width" [height]="img.height">
             </div>
