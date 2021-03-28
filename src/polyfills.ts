@@ -1,7 +1,7 @@
 /***************************************************************************************************
  * Load `$localize` onto the global scope - used if i18n tags appear in Angular templates.
  */
-import '@angular/localize/init';
+import '@angular/localize/init'
 /**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
@@ -59,8 +59,7 @@ import '@angular/localize/init';
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js/dist/zone';  // Included with Angular CLI.
-
+import 'zone.js/dist/zone' // Included with Angular CLI.
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
@@ -68,8 +67,8 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 // poly fill to support smooth scrolling in safari (for javascript and anchors)
 // imported this way because angular gives warnings without it
 // https://github.com/iamdustan/smoothscroll/issues/113#issuecomment-490960424
-import * as smoothscroll from 'smoothscroll-polyfill';
+import * as smoothscroll from 'smoothscroll-polyfill'
 if (typeof window !== 'undefined') {
-  smoothscroll.polyfill();
+    smoothscroll.polyfill()
 }
-import 'smoothscroll-anchor-polyfill';
+import 'smoothscroll-anchor-polyfill'

@@ -1,96 +1,96 @@
 [
-  {
-    "id": 1,
-    "name": "Sanctuary",
-    "description": "Project completed for D U S T architects. Brief to create a sanctuary in Sedona, Arizona to operate as a contemplation space.",
-    "date": "March 3, 2003",
-    "images": [
-      {
-        "src": "assets/images/sanctuary/1.jpg",
-        "width": "1728",
-        "height": "1152"
-      },
-      {
-        "src": "assets/images/sanctuary/2.jpg",
-        "width": "1728",
-        "height": "1152"
-      },
-      {
-        "src": "assets/images/sanctuary/3.jpg",
-        "width": "1728",
-        "height": "1152"
-      },
-      {
-        "src": "assets/images/sanctuary/4.jpg",
-        "width": "1728",
-        "height": "1145"
-      },
-      {
-        "src": "assets/images/sanctuary/5.jpg",
-        "width": "1728",
-        "height": "1152"
-      },
-      {
-        "src": "assets/images/sanctuary/6.jpg",
-        "width": "3060",
-        "height": "1980"
-      },
-      {
-        "src": "assets/images/sanctuary/7.jpg",
-        "width": "3060",
-        "height": "1981"
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Bisbee Community Center",
-    "description": "Third year of architecture school 7-week project developing the downtown of Bisbee, Arizona. Program of space includes revitalization of a blighted urban site with community amenity and temporary housing.",
-    "date": "January 1, 2001",
-    "images": [
-      {
-        "src": "assets/images/bisbee_community_center/1.jpg",
-        "width": "2250",
-        "height": "1500"
-      },
-      {
-        "src": "assets/images/bisbee_community_center/2.jpg",
-        "width": "2250",
-        "height": "1500"
-      },
-      {
-        "src": "assets/images/bisbee_community_center/3.jpg",
-        "width": "2250",
-        "height": "1500"
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Chihuahuita Vista",
-    "description": "Multi-family housing development on the international border of the United States located in the Chihuahuaita historic neighborhood in El Paso. Project design responds to the social-cultural lines between two nations.",
-    "date": "February 2, 2002",
-    "images": [
-      {
-        "src": "assets/images/chihuahuita_vista/1.jpg",
-        "width": "2700",
-        "height": "1519"
-      },
-      {
-        "src": "assets/images/chihuahuita_vista/2.jpg",
-        "width": "3600",
-        "height": "2025"
-      },
-      {
-        "src": "assets/images/chihuahuita_vista/3.jpg",
-        "width": "3600",
-        "height": "2025"
-      },
-      {
-        "src": "assets/images/chihuahuita_vista/4.jpg",
-        "width": "3600",
-        "height": "2025"
-      }
-    ]
-  }
+    {
+        "id": 1,
+        "name": "Sanctuary",
+        "description": "Project completed for D U S T architects. Brief to create a sanctuary in Sedona, Arizona to operate as a contemplation space.",
+        "date": "March 3, 2003",
+        "images": [
+            {
+                "src": "assets/images/sanctuary/1.jpg",
+                "width": "1728",
+                "height": "1152"
+            },
+            {
+                "src": "assets/images/sanctuary/2.jpg",
+                "width": "1728",
+                "height": "1152"
+            },
+            {
+                "src": "assets/images/sanctuary/3.jpg",
+                "width": "1728",
+                "height": "1152"
+            },
+            {
+                "src": "assets/images/sanctuary/4.jpg",
+                "width": "1728",
+                "height": "1145"
+            },
+            {
+                "src": "assets/images/sanctuary/5.jpg",
+                "width": "1728",
+                "height": "1152"
+            },
+            {
+                "src": "assets/images/sanctuary/6.jpg",
+                "width": "3060",
+                "height": "1980"
+            },
+            {
+                "src": "assets/images/sanctuary/7.jpg",
+                "width": "3060",
+                "height": "1981"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Bisbee Community Center",
+        "description": "Third year of architecture school 7-week project developing the downtown of Bisbee, Arizona. Program of space includes revitalization of a blighted urban site with community amenity and temporary housing.",
+        "date": "January 1, 2001",
+        "images": [
+            {
+                "src": "assets/images/bisbee_community_center/1.jpg",
+                "width": "2250",
+                "height": "1500"
+            },
+            {
+                "src": "assets/images/bisbee_community_center/2.jpg",
+                "width": "2250",
+                "height": "1500"
+            },
+            {
+                "src": "assets/images/bisbee_community_center/3.jpg",
+                "width": "2250",
+                "height": "1500"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Chihuahuita Vista",
+        "description": "Multi-family housing development on the international border of the United States located in the Chihuahuaita historic neighborhood in El Paso. Project design responds to the social-cultural lines between two nations.",
+        "date": "February 2, 2002",
+        "images": [
+            {
+                "src": "assets/images/chihuahuita_vista/1.jpg",
+                "width": "2700",
+                "height": "1519"
+            },
+            {
+                "src": "assets/images/chihuahuita_vista/2.jpg",
+                "width": "3600",
+                "height": "2025"
+            },
+            {
+                "src": "assets/images/chihuahuita_vista/3.jpg",
+                "width": "3600",
+                "height": "2025"
+            },
+            {
+                "src": "assets/images/chihuahuita_vista/4.jpg",
+                "width": "3600",
+                "height": "2025"
+            }
+        ]
+    }
 ]

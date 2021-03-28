@@ -2,8 +2,9 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
+    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue',
+        Helvetica, Arial, 'Lucida Grande', sans-serif;
+    font-weight: 300;
 }
 
 // Document
@@ -11,6 +12,6 @@ body {
 // 1. neccesary polyfill css property for smoothscroll-anchor-polyfill
 
 html {
-  scroll-behavior: smooth;
-  --scroll-behavior: smooth; // 1
+    scroll-behavior: smooth;
+    --scroll-behavior: smooth; // 1
 }
