@@ -27,7 +27,6 @@
                             "src/favicon.ico",
                             "src/assets",
                             "src/api",
-                            "src/404.html",
                             "src/robots.txt"
                         ],
                         "styles": [
