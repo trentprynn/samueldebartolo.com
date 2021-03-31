@@ -27,7 +27,8 @@
                             "src/favicon.ico",
                             "src/assets",
                             "src/api",
-                            "src/robots.txt"
+                            "src/robots.txt",
+                            "src/sitemap.xml"
                         ],
                         "styles": [
                             "node_modules/bootstrap/scss/bootstrap.scss",
