@@ -8,7 +8,7 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "pretty": "prettier --write \"./**/*.{js,ts,json,html,scss,yaml}\""
+        "pretty": "prettier --ignore-path .gitignore --write \"./**/*.{js,ts,json,html,scss,css,yaml}\""
     },
     "private": true,
     "dependencies": {
