@@ -1,27 +1,6 @@
 <div class="container-fluid">
-    <div class="row">
-        <!-- Navigation -->
-        <div class="col-sm-3 px-1 sticky-top bg-white h-100">
-            <div class="py-2 sticky-top flex-grow-1">
-                <div class="nav flex-sm-column">
-                    <a
-                        href="#"
-                        class="nav-link text-dark d-none d-sm-inline current"
-                        >Samuel DeBartolo</a
-                    >
-                    <a
-                        href="#{{ project.name | removeWhiteSpace }}"
-                        *ngFor="let project of projects"
-                        class="nav-link text-secondary"
-                        >{{ project.name }}</a
-                    >
-                </div>
-            </div>
-        </div>
-        <!-- End Navigation -->
-
-        <!-- Page Content -->
-        <div class="col">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-8">
             <div *ngIf="projects && projects.length">
                 <div
                     *ngFor="let project of projects"
@@ -45,6 +24,5 @@
                 <footer>&copy; Copyright 2021</footer>
             </small>
         </div>
-        <!-- End Page Content -->
     </div>
 </div>

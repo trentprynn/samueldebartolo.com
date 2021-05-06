@@ -64,11 +64,3 @@ import 'zone.js/dist/zone' // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
-// poly fill to support smooth scrolling in safari (for javascript and anchors)
-// imported this way because angular gives warnings without it
-// https://github.com/iamdustan/smoothscroll/issues/113#issuecomment-490960424
-import * as smoothscroll from 'smoothscroll-polyfill'
-if (typeof window !== 'undefined') {
-    smoothscroll.polyfill()
-}
-import 'smoothscroll-anchor-polyfill'
