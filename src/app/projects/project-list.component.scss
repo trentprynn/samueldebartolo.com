@@ -10,27 +10,3 @@ img.ng-lazyloaded {
         opacity: 1;
     }
 }
-
-// remove outline on focus from all elements.
-//
-// this prevents an outline from being shown around
-// a project div when an anchor link is clicked to
-// scroll to a certain project
-*:focus {
-    outline: none;
-}
-
-// Small devices media query
-@media (max-width: 576px) {
-    // on small devices we have a fixed height navbar, this css psuedo
-    // element means when a user selects a link in the navbar the element
-    // will not scroll under the navbar itself.
-    *[id]:before {
-        display: block;
-        content: ' ';
-        margin-top: -90px;
-        height: 90px;
-        visibility: hidden;
-        pointer-events: none;
-    }
-}
