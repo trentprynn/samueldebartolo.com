@@ -14,9 +14,7 @@ export class ProjectService {
     constructor(private http: HttpClient) {}
 
     getProjects(): Observable<Project[]> {
-        return this.http
-            .get<Project[]>(this.projectsUrl)
-            .pipe(catchError(this.handleError))
+        return this.http.get<Project[]>(this.projectsUrl).pipe(catchError(this.handleError))
     }
 
     getDefaultProjectImage(): any {

@@ -1,8 +1,11 @@
-/* Importing Bootstrap SCSS file. */
+/* Importing bootstrap scss file. */
 @import '~bootstrap/scss/bootstrap';
 
+/* Importing bootstrap icons css file. */
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+
 body {
-    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue',
-        Helvetica, Arial, 'Lucida Grande', sans-serif;
+    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
+        sans-serif;
     font-weight: 300;
 }

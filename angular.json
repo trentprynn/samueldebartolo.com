@@ -22,17 +22,8 @@
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
-                        "assets": [
-                            "src/favicon.ico",
-                            "src/assets",
-                            "src/api",
-                            "src/robots.txt",
-                            "src/sitemap.xml"
-                        ],
-                        "styles": [
-                            "node_modules/bootstrap/scss/bootstrap.scss",
-                            "src/styles.scss"
-                        ],
+                        "assets": ["src/favicon.ico", "src/assets", "src/api", "src/robots.txt", "src/sitemap.xml"],
+                        "styles": ["node_modules/bootstrap/scss/bootstrap.scss", "src/styles.scss"],
                         "scripts": [],
                         "vendorChunk": true,
                         "extractLicenses": false,
@@ -104,11 +95,7 @@
                 "lint": {
                     "builder": "@angular-devkit/build-angular:tslint",
                     "options": {
-                        "tsConfig": [
-                            "tsconfig.app.json",
-                            "tsconfig.spec.json",
-                            "e2e/tsconfig.json"
-                        ],
+                        "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json", "e2e/tsconfig.json"],
                         "exclude": ["**/node_modules/**"]
                     }
                 },

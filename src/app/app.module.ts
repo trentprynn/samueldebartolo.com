@@ -12,13 +12,7 @@ import { RemoveWhiteSpacePipe } from './shared/pipes/remove-whitespace.pipe'
 
 @NgModule({
     declarations: [AppComponent, ProjectListComponent, RemoveWhiteSpacePipe],
-    imports: [
-        BrowserModule,
-        CommonModule,
-        HttpClientModule,
-        LazyLoadImageModule,
-        NgbModule,
-    ],
+    imports: [BrowserModule, CommonModule, HttpClientModule, LazyLoadImageModule, NgbModule],
     providers: [RemoveWhiteSpacePipe],
     bootstrap: [AppComponent],
 })

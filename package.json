@@ -26,6 +26,7 @@
         "@angular/router": "^12.2.6",
         "@ng-bootstrap/ng-bootstrap": "^11.0.0-beta.2",
         "bootstrap": "^5.1.1",
+        "bootstrap-icons": "^1.5.0",
         "ng-lazyload-image": "^9.1.0",
         "rxjs": "^7.3.0",
         "tslib": "^2.0.0",
