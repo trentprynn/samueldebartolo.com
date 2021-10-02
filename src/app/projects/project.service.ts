@@ -19,7 +19,7 @@ export class ProjectService {
 
     getDefaultProjectImage(): any {
         return {
-            src: 'assets/images/default/default.jpg',
+            src: 'assets/images/default/white.jpg',
             width: '1600',
             height: '900',
         }
