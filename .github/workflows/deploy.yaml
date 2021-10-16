@@ -16,8 +16,8 @@ jobs:
 
             - name: Install and Build 🔧
               run: |
-                  npm ci
-                  npm run ng build -- --prod
+                  yarn install
+                  yarn run ng build --configuration production
 
             - name: Deploy 🚀
               uses: JamesIves/github-pages-deploy-action@3.7.1
