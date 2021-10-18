@@ -4,8 +4,22 @@
 /* Importing bootstrap icons css file. */
 @import '~bootstrap-icons/font/bootstrap-icons.css';
 
+// give some default styling for html body
 body {
     font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
         sans-serif;
     font-weight: 300;
+}
+
+// animate lazy load image transitions
+img.ng-lazyloaded {
+    animation: fadein 1s;
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

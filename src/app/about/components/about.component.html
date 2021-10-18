@@ -5,7 +5,14 @@
 </div>
 <div class="row justify-content-center">
     <div class="col-xs-6 col-md-3">
-        <img src="assets/images/default/sam.jpg" width="1080" height="1080" class="img-fluid" alt="Responsive image" />
+        <img
+        class="img-fluid"
+        [defaultImage]="'assets/images/default/white.jpg'"
+        [lazyLoad]="'assets/images/default/sam.jpg'"
+        [alt]="'Samuel DeBartolo with his Partner Olivia'"
+        [width]="1080"
+        [height]="1080"
+        />
     </div>
     <div class="col-xs-6 col-md-3">
         <p>

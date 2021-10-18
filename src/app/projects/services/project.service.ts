@@ -14,13 +14,4 @@ export class ProjectService {
     getProjects(): Observable<Project[]> {
         return this.http.get<Project[]>('/api/projects/projects.json')
     }
-
-    getDefaultProjectImage(): Image {
-        return {
-            src: 'assets/images/default/white.jpg',
-            alt: 'default image for loading',
-            width: 1600,
-            height: 900,
-        }
-    }
 }
