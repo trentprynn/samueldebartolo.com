@@ -7,18 +7,7 @@ import { RemoveWhiteSpacePipe } from './pipes/remove-whitespace.pipe'
 
 @NgModule({
     declarations: [RemoveWhiteSpacePipe],
-    imports: [
-        CommonModule,
-        RouterModule,
-        LazyLoadImageModule,
-        NgbModule,
-    ],
-    exports: [
-        CommonModule,
-        RouterModule,
-        LazyLoadImageModule,
-        NgbModule,
-        RemoveWhiteSpacePipe,
-    ],
+    imports: [CommonModule, RouterModule, LazyLoadImageModule, NgbModule],
+    exports: [CommonModule, RouterModule, LazyLoadImageModule, NgbModule, RemoveWhiteSpacePipe],
 })
 export class SharedModule {}
