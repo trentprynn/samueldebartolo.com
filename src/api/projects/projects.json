@@ -6,43 +6,43 @@
         "date": "March 3, 2003",
         "images": [
             {
-                "src": "assets/images/sanctuary/1.jpg",
+                "src": "/assets/images/sanctuary/1.jpg",
                 "alt": "sanctuary image one",
                 "width": "1728",
                 "height": "1152"
             },
             {
-                "src": "assets/images/sanctuary/2.jpg",
+                "src": "/assets/images/sanctuary/2.jpg",
                 "alt": "sanctuary image two",
                 "width": "1728",
                 "height": "1152"
             },
             {
-                "src": "assets/images/sanctuary/3.jpg",
+                "src": "/assets/images/sanctuary/3.jpg",
                 "alt": "sanctuary image three",
                 "width": "1728",
                 "height": "1152"
             },
             {
-                "src": "assets/images/sanctuary/4.jpg",
+                "src": "/assets/images/sanctuary/4.jpg",
                 "alt": "sanctuary image four",
                 "width": "1728",
                 "height": "1145"
             },
             {
-                "src": "assets/images/sanctuary/5.jpg",
+                "src": "/assets/images/sanctuary/5.jpg",
                 "alt": "sanctuary image five",
                 "width": "1728",
                 "height": "1152"
             },
             {
-                "src": "assets/images/sanctuary/6.jpg",
+                "src": "/assets/images/sanctuary/6.jpg",
                 "alt": "sanctuary image six",
                 "width": "3060",
                 "height": "1980"
             },
             {
-                "src": "assets/images/sanctuary/7.jpg",
+                "src": "/assets/images/sanctuary/7.jpg",
                 "alt": "sanctuary image seven",
                 "width": "3060",
                 "height": "1981"
@@ -56,19 +56,19 @@
         "date": "January 1, 2001",
         "images": [
             {
-                "src": "assets/images/bisbee_center/1.jpg",
+                "src": "/assets/images/bisbee_center/1.jpg",
                 "alt": "bisbee image one",
                 "width": "2250",
                 "height": "1500"
             },
             {
-                "src": "assets/images/bisbee_center/2.jpg",
+                "src": "/assets/images/bisbee_center/2.jpg",
                 "alt": "bisbee image two",
                 "width": "2250",
                 "height": "1500"
             },
             {
-                "src": "assets/images/bisbee_center/3.jpg",
+                "src": "/assets/images/bisbee_center/3.jpg",
                 "alt": "bisbee image three",
                 "width": "2250",
                 "height": "1500"
@@ -82,25 +82,25 @@
         "date": "February 2, 2002",
         "images": [
             {
-                "src": "assets/images/chihuahuita_vista/1.jpg",
+                "src": "/assets/images/chihuahuita_vista/1.jpg",
                 "alt": "chihuahuita image one",
                 "width": "2700",
                 "height": "1519"
             },
             {
-                "src": "assets/images/chihuahuita_vista/2.jpg",
+                "src": "/assets/images/chihuahuita_vista/2.jpg",
                 "alt": "chihuahuita image two",
                 "width": "3600",
                 "height": "2025"
             },
             {
-                "src": "assets/images/chihuahuita_vista/3.jpg",
+                "src": "/assets/images/chihuahuita_vista/3.jpg",
                 "alt": "chihuahuita image three",
                 "width": "3600",
                 "height": "2025"
             },
             {
-                "src": "assets/images/chihuahuita_vista/4.jpg",
+                "src": "/assets/images/chihuahuita_vista/4.jpg",
                 "alt": "chihuahuita image four",
                 "width": "3600",
                 "height": "2025"
