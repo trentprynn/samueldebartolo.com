@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
-import { Attributes, IntersectionObserverHooks, LazyLoadImageModule, LAZYLOAD_IMAGE_HOOKS } from 'ng-lazyload-image'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
-import { RemoveWhiteSpacePipe } from './pipes/remove-whitespace.pipe'
+import { Attributes, IntersectionObserverHooks, LazyLoadImageModule, LAZYLOAD_IMAGE_HOOKS } from 'ng-lazyload-image'
 import { debounceTime } from 'rxjs'
+import { RemoveWhiteSpacePipe } from './pipes/remove-whitespace.pipe'
 
 class LazyLoadImageHooks extends IntersectionObserverHooks {
     getObservable(attributes: Attributes) {
