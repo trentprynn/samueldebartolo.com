@@ -1,8 +1,34 @@
 [
     {
+        "id": 0,
+        "name": "case study 001",
+        "description": "design build project at the university of arizona. to be completed 2022.",
+        "date": "2022",
+        "images": [
+            {
+                "src": "/assets/images/case_study_001/1.jpg",
+                "alt": "case study 001 image one",
+                "width": "2016",
+                "height": "1512"
+            },
+            {
+                "src": "/assets/images/case_study_001/2.jpg",
+                "alt": "case study 001 image two",
+                "width": "2015",
+                "height": "1512"
+            },
+            {
+                "src": "/assets/images/case_study_001/3.jpg",
+                "alt": "case study 001 image three",
+                "width": "1512",
+                "height": "2016"
+            }
+        ]
+    },
+    {
         "id": 1,
-        "name": "Sanctuary",
-        "description": "Project completed for D U S T architects. Brief to create a sanctuary in Sedona, Arizona to operate as a contemplation space.",
+        "name": "sanctuary",
+        "description": "project completed for D U S T architects. brief to create a sanctuary in sedona, arizona to operate as a contemplation space.",
         "date": "March 3, 2003",
         "images": [
             {
@@ -51,8 +77,8 @@
     },
     {
         "id": 2,
-        "name": "Bisbee Center",
-        "description": "Third year of architecture school 7-week project developing the downtown of Bisbee, Arizona. Program of space includes revitalization of a blighted urban site with community amenity and temporary housing.",
+        "name": "bisbee center",
+        "description": "third year of architecture school 7-week project developing the downtown of bisbee, arizona. program of space includes revitalization of a blighted urban site with community amenity and temporary housing.",
         "date": "January 1, 2001",
         "images": [
             {
@@ -77,8 +103,8 @@
     },
     {
         "id": 3,
-        "name": "Chihuahuita Vista",
-        "description": "Multi-family housing development on the international border of the United States located in the Chihuahuita historic neighborhood in El Paso. Project design responds to the social-cultural lines between two nations.",
+        "name": "chihuahuita vista",
+        "description": "multi-family housing development on the international border of the united states located in the chihuahuita historic neighborhood in el paso. project design responds to the social-cultural lines between two nations.",
         "date": "February 2, 2002",
         "images": [
             {
