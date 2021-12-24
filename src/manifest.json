@@ -1,0 +1,26 @@
+{
+    "name": "samuel debartolo",
+    "short_name": "samuel debartolo",
+    "description": "samuel debartolo's architecture portfolio",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "type": "image/x-icon",
+            "sizes": "48x48"
+        },
+        {
+            "src": "/assets/images/default/logo192.jpg",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/assets/images/default/logo512.jpg",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/",
+    "display": "browser",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
+}
