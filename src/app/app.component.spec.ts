@@ -2,12 +2,13 @@ import { TestBed, waitForAsync } from '@angular/core/testing'
 import { RouterTestingModule } from '@angular/router/testing'
 import { SharedModule } from '@shared/shared.module'
 import { AppComponent } from './app.component'
+import { CoreModule } from './core/core.module'
 
 describe('AppComponent', () => {
     beforeEach(
         waitForAsync(() => {
             TestBed.configureTestingModule({
-                imports: [SharedModule, RouterTestingModule],
+                imports: [CoreModule, SharedModule, RouterTestingModule],
                 declarations: [AppComponent],
             }).compileComponents()
         })
