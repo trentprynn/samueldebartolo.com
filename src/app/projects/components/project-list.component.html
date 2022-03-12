@@ -7,20 +7,20 @@
 
     <div *ngIf="projects | async as projects">
         <div *ngFor="let project of projects" [id]="project.name | removeWhiteSpace">
-            <div class="row justify-content-center">
-                <div class="col-xs-12 col-md-6">
+            <div class="row">
+                <div class="col">
                     <h1 class="text-end">
                         {{ project.name }}
                     </h1>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-xs-12 col-md-6">
+            <div class="row">
+                <div class="col">
                     <p>{{ project.description }}</p>
                 </div>
             </div>
-            <div *ngFor="let img of project.images" class="row justify-content-center pb-3">
-                <div class="col-xs-12 col-md-6">
+            <div *ngFor="let img of project.images" class="row pb-3">
+                <div class="col">
                     <img
                         class="img-fluid"
                         [defaultImage]="'/assets/images/default/white.jpg'"
