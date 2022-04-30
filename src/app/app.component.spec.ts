@@ -5,14 +5,12 @@ import { AppComponent } from './app.component'
 import { CoreModule } from './core/core.module'
 
 describe('AppComponent', () => {
-    beforeEach(
-        waitForAsync(() => {
-            TestBed.configureTestingModule({
-                imports: [CoreModule, SharedModule, RouterTestingModule],
-                declarations: [AppComponent],
-            }).compileComponents()
-        })
-    )
+    beforeEach(waitForAsync(() => {
+        TestBed.configureTestingModule({
+            imports: [CoreModule, SharedModule, RouterTestingModule],
+            declarations: [AppComponent],
+        }).compileComponents()
+    }))
 
     it('should create the app', () => {
         const fixture = TestBed.createComponent(AppComponent)

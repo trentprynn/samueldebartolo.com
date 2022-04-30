@@ -6,14 +6,12 @@ describe('ProjectListComponent', () => {
     let component: ProjectListComponent
     let fixture: ComponentFixture<ProjectListComponent>
 
-    beforeEach(
-        waitForAsync(() => {
-            TestBed.configureTestingModule({
-                imports: [HttpClientTestingModule],
-                declarations: [ProjectListComponent],
-            }).compileComponents()
-        })
-    )
+    beforeEach(waitForAsync(() => {
+        TestBed.configureTestingModule({
+            imports: [HttpClientTestingModule],
+            declarations: [ProjectListComponent],
+        }).compileComponents()
+    }))
 
     beforeEach(() => {
         fixture = TestBed.createComponent(ProjectListComponent)
