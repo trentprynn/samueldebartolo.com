@@ -10,16 +10,3 @@ body {
         sans-serif;
     font-weight: 300;
 }
-
-// animate lazy load image transitions
-img.ng-lazyloaded {
-    animation: fadein 1s;
-}
-@keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
