@@ -2,9 +2,11 @@
     <div class="col">
         <h1>samuel debartolo</h1>
         <div class="d-flex">
-            <!-- only include each nav link if the user isn't current on that page -->
-            <small *ngIf="url !== '/'" class="pe-2"><a [routerLink]="['/']">projects</a></small>
-            <small *ngIf="url !== '/about'"><a [routerLink]="['/about']">about</a></small>
+            <small class="pe-2">
+                <a routerLink="/" routerLinkActive="text-dark" [routerLinkActiveOptions]="{ exact: true }">projects</a>
+            </small>
+            <small class="pe-2"><a routerLink="/about" routerLinkActive="text-dark">about</a></small>
+            <small class="pe-2"><a routerLink="/history" routerLinkActive="text-dark">history</a></small>
         </div>
     </div>
 </div>

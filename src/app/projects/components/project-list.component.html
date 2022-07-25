@@ -1,11 +1,21 @@
-<div *ngIf="(projectsLoading | async) === false; else loading">
-    <div *ngIf="projectsError | async as projectsError">
-        <p class="text-center text-danger">
-            {{ projectsError }}
-        </p>
-    </div>
+<div>
+    <ng-container *ngIf="projectsLoading">
+        <div class="text-center">
+            <div class="spinner-grow" style="width: 5rem; height: 5rem" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </ng-container>
 
-    <div *ngIf="projects | async as projects">
+    <ng-container *ngIf="projectFetchError">
+        <div>
+            <p class="text-center text-danger">
+                {{ projectFetchError }}
+            </p>
+        </div>
+    </ng-container>
+
+    <div *ngIf="projects && projects.length > 0">
         <div *ngFor="let project of projects" [id]="project.name | removeWhiteSpace">
             <div class="row">
                 <div class="col">
@@ -19,8 +29,8 @@
                     <p>{{ project.description }}</p>
                 </div>
             </div>
-            <div *ngFor="let img of project.images" class="row pb-3">
-                <div class="col">
+            <div class="row pb-3">
+                <div *ngFor="let img of project.images" class="col-md-4 mb-4">
                     <img
                         class="img-fluid"
                         loading="lazy"
@@ -34,11 +44,3 @@
         </div>
     </div>
 </div>
-
-<ng-template #loading>
-    <div class="text-center">
-        <div class="spinner-grow" style="width: 5rem; height: 5rem" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-    </div>
-</ng-template>
