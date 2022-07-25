@@ -3,7 +3,7 @@ import { NavigationEnd, Router } from '@angular/router'
 import { filter, Subject, takeUntil } from 'rxjs'
 
 @Component({
-    selector: 'sd-nav',
+    selector: 'app-nav',
     templateUrl: './nav.component.html',
 })
 export class NavComponent implements OnDestroy {

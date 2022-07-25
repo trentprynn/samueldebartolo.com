@@ -1,6 +1,6 @@
 import { Image } from './image.model'
 
-export interface Project {
+export type Project = {
     id: number
     name: string
     start: Date

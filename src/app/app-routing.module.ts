@@ -7,6 +7,10 @@ const routes: Routes = [
         loadChildren: () => import('./about/about.module').then((m) => m.AboutModule),
     },
     {
+        path: 'history',
+        loadChildren: () => import('./history/history.module').then((m) => m.HistoryModule),
+    },
+    {
         path: '',
         loadChildren: () => import('./projects/projects.module').then((m) => m.ProjectsModule),
     },

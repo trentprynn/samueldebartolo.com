@@ -1,21 +1,37 @@
-import { Component } from '@angular/core'
-import { Project } from '@projects/models/project'
+import { HttpErrorResponse } from '@angular/common/http'
+import { Component, OnInit } from '@angular/core'
 import { ProjectService } from '@projects/services/project.service'
-import { Observable } from 'rxjs'
+import { Project } from '@projects/types/project'
 
 @Component({
-    selector: 'project-list',
+    selector: 'app-project-list',
     templateUrl: './project-list.component.html',
 })
-export class ProjectListComponent {
-    projects: Observable<Project[]>
-    projectsLoading: Observable<boolean>
-    projectsError: Observable<string | null>
+export class ProjectListComponent implements OnInit {
+    projects: Project[] | undefined = undefined
+    projectsLoading: boolean = false
+    projectFetchError: string | null = null
 
-    constructor(private projectService: ProjectService) {
-        // setup list of projects
-        this.projects = this.projectService.projects
-        this.projectsLoading = this.projectService.projectsLoadings
-        this.projectsError = this.projectService.projectsError
+    constructor(private projectService: ProjectService) {}
+
+    ngOnInit(): void {
+        this.fetchProjects()
+    }
+
+    private fetchProjects() {
+        this.projectsLoading = true
+        this.projectService
+            .getProjects()
+            .subscribe({
+                next: (projects) => {
+                    this.projects = projects
+                },
+                error: (error: HttpErrorResponse) => {
+                    this.projectFetchError = error.statusText
+                },
+            })
+            .add(() => {
+                this.projectsLoading = false
+            })
     }
 }
