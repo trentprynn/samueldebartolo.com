@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
-import { ProjectService } from '@projects/services/project.service'
-import { Project } from '@projects/types/project'
+import { ProjectService } from '../services/project.service'
+import { Project } from '../types/project'
 
 @Component({
     selector: 'app-project-list',
