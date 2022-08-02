@@ -1,6 +1,50 @@
 [
     {
         "id": 0,
+        "name": "undergrad thesis",
+        "description": "housing prototype for urban development in desert cities.",
+        "date": "2022",
+        "images": [
+            {
+                "src": "/assets/images/undergrad_thesis/1.jpg",
+                "alt": "undergrad thesis image one",
+                "width": "649",
+                "height": "1296"
+            },
+            {
+                "src": "/assets/images/undergrad_thesis/2.jpg",
+                "alt": "undergrad thesis image two",
+                "width": "649",
+                "height": "1296"
+            },
+            {
+                "src": "/assets/images/undergrad_thesis/3.jpg",
+                "alt": "undergrad thesis image three",
+                "width": "649",
+                "height": "1296"
+            },
+            {
+                "src": "/assets/images/undergrad_thesis/4.jpg",
+                "alt": "undergrad thesis image four",
+                "width": "649",
+                "height": "1296"
+            },
+            {
+                "src": "/assets/images/undergrad_thesis/5.jpg",
+                "alt": "undergrad thesis image five",
+                "width": "649",
+                "height": "1296"
+            },
+            {
+                "src": "/assets/images/undergrad_thesis/6.jpg",
+                "alt": "undergrad thesis image six",
+                "width": "649",
+                "height": "1296"
+            }
+        ]
+    },
+    {
+        "id": 1,
         "name": "case study 001",
         "description": "design build project at the university of arizona. to be completed 2022.",
         "date": "2022",
@@ -26,7 +70,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 2,
         "name": "sanctuary",
         "description": "project completed for D U S T architects. brief to create a sanctuary in sedona, arizona to operate as a contemplation space.",
         "date": "March 3, 2003",
@@ -76,7 +120,7 @@
         ]
     },
     {
-        "id": 2,
+        "id": 3,
         "name": "bisbee center",
         "description": "third year of architecture school 7-week project developing the downtown of bisbee, arizona. program of space includes revitalization of a blighted urban site with community amenity and temporary housing.",
         "date": "January 1, 2001",
@@ -98,38 +142,6 @@
                 "alt": "bisbee image three",
                 "width": "2250",
                 "height": "1500"
-            }
-        ]
-    },
-    {
-        "id": 3,
-        "name": "chihuahuita vista",
-        "description": "multi-family housing development on the international border of the united states located in the chihuahuita historic neighborhood in el paso. project design responds to the social-cultural lines between two nations.",
-        "date": "February 2, 2002",
-        "images": [
-            {
-                "src": "/assets/images/chihuahuita_vista/1.jpg",
-                "alt": "chihuahuita image one",
-                "width": "2700",
-                "height": "1519"
-            },
-            {
-                "src": "/assets/images/chihuahuita_vista/2.jpg",
-                "alt": "chihuahuita image two",
-                "width": "3600",
-                "height": "2025"
-            },
-            {
-                "src": "/assets/images/chihuahuita_vista/3.jpg",
-                "alt": "chihuahuita image three",
-                "width": "3600",
-                "height": "2025"
-            },
-            {
-                "src": "/assets/images/chihuahuita_vista/4.jpg",
-                "alt": "chihuahuita image four",
-                "width": "3600",
-                "height": "2025"
             }
         ]
     }
