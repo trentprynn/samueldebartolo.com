@@ -8,4 +8,4 @@ Repository to hold source code for samueldebartolo.com portfolio.
 4. run `yarn start` to run local application at `http://localhost:4200/` with hot reloading
 
 ## Deployment
-- on a push to master an a GitHub action will build and deploy the website to GitHub pages where it's hosted
+- on a push to master the website will be built and deployed automatically by Railway 
