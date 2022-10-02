@@ -5,9 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:prod": "ng build --configuration production",
     "test": "ng test --watch=false",
-    "lint": "prettier --write 'src/' > /dev/null && ng lint --fix"
+    "lint": "prettier --write 'src/' > /dev/null && ng lint --fix",
+    "build:prod": "ng build --configuration production",
+    "start:prod": "yarn run http-server dist/portfolio/"
   },
   "author": {
     "name": "Trent Prynn",
@@ -29,6 +30,7 @@
     "@popperjs/core": "2.11.5",
     "bootstrap": "5.2.0",
     "bootstrap-icons": "1.9.1",
+    "http-server": "14.1.1",
     "rxjs": "7.4.0",
     "tslib": "2.4.0",
     "zone.js": "0.11.7"
