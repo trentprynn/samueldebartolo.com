@@ -5,6 +5,17 @@ import { environment } from './environments/environment'
 
 if (environment.production) {
     enableProdMode()
+
+    // nuke console logging in production
+    window.console.log = function () {}
+
+    // append simple analytics script only in production
+    const saScriptElement = document.createElement('script')
+    saScriptElement.setAttribute('async', '')
+    saScriptElement.setAttribute('defer', '')
+    saScriptElement.setAttribute('data-collect-dnt', 'true')
+    saScriptElement.src = 'https://sa.samueldebartolo.com/latest.js'
+    document.body.appendChild(saScriptElement)
 }
 
 platformBrowserDynamic()
