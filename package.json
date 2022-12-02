@@ -7,8 +7,7 @@
     "build": "ng build",
     "test": "ng test --watch=false",
     "lint": "prettier --write 'src/' > /dev/null && ng lint --fix",
-    "build:prod": "ng build --configuration production",
-    "start:prod": "serve -s dist/portfolio/"
+    "build:prod": "ng build --configuration production"
   },
   "author": {
     "name": "Trent Prynn",
@@ -31,7 +30,6 @@
     "bootstrap": "5.2.2",
     "bootstrap-icons": "1.9.1",
     "rxjs": "7.4.0",
-    "serve": "14.0.1",
     "tslib": "2.4.0",
     "zone.js": "0.11.8"
   },
