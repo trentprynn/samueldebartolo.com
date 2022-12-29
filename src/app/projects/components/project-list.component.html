@@ -16,7 +16,7 @@
     </ng-container>
 
     <div *ngIf="projects && projects.length > 0">
-        <div *ngFor="let project of projects" [id]="project.name | removeWhiteSpace">
+        <div *ngFor="let project of projects" [id]="project.name | removeWhiteSpace" class="mt-5">
             <div class="row">
                 <div class="col">
                     <h1 class="text-end">
@@ -26,7 +26,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <p>{{ project.description }}</p>
+                    <p class="text-end">{{ project.description }}</p>
                 </div>
             </div>
             <div class="row pb-3">
