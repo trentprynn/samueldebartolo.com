@@ -10,7 +10,7 @@ import { Project } from '../types/project'
 export class ProjectListComponent implements OnInit {
     projects: Project[] | undefined = undefined
     projectsLoading: boolean = false
-    projectFetchError: string | null = null
+    projectsFetchError: string | null = null
 
     constructor(private projectService: ProjectService) {}
 
@@ -20,14 +20,17 @@ export class ProjectListComponent implements OnInit {
 
     private fetchProjects() {
         this.projectsLoading = true
+        this.projectsFetchError = null
         this.projectService
             .getProjects()
             .subscribe({
                 next: (projects) => {
+                    console.log('PROJECTS')
+                    console.log(projects)
                     this.projects = projects
                 },
                 error: (error: HttpErrorResponse) => {
-                    this.projectFetchError = error.statusText
+                    this.projectsFetchError = error.statusText
                 },
             })
             .add(() => {

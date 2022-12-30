@@ -1,4 +1,4 @@
-<div>
+<div class="mt-3">
     <ng-container *ngIf="projectsLoading">
         <div class="text-center">
             <div class="spinner-grow" style="width: 5rem; height: 5rem" role="status">
@@ -7,16 +7,14 @@
         </div>
     </ng-container>
 
-    <ng-container *ngIf="projectFetchError">
-        <div>
-            <p class="text-center text-danger">
-                {{ projectFetchError }}
-            </p>
-        </div>
+    <ng-container *ngIf="projectsFetchError">
+        <p class="text-center text-danger">
+            {{ projectsFetchError }}
+        </p>
     </ng-container>
 
     <div *ngIf="projects && projects.length > 0">
-        <div *ngFor="let project of projects" [id]="project.name | removeWhiteSpace" class="mt-5">
+        <div *ngFor="let project of projects" [id]="project.name | removeWhiteSpace" class="mb-5">
             <div class="row">
                 <div class="col">
                     <h1 class="text-end">
@@ -30,16 +28,18 @@
                 </div>
             </div>
             <div class="row pb-3">
-                <div *ngFor="let img of project.images" class="col-md-4 mb-4">
-                    <img
-                        class="img-fluid"
-                        loading="lazy"
-                        [src]="img.src"
-                        [alt]="img.alt"
-                        [width]="img.width"
-                        [height]="img.height"
-                    />
-                </div>
+                <ng-container *ngFor="let img of project.images">
+                    <div class="col-md-4 mb-4" [ngClass]="{ 'd-none d-lg-block': img.height > img.width }">
+                        <img
+                            class="img-fluid"
+                            loading="lazy"
+                            [src]="img.src"
+                            [alt]="img.alt"
+                            [width]="img.width"
+                            [height]="img.height"
+                        />
+                    </div>
+                </ng-container>
             </div>
         </div>
     </div>

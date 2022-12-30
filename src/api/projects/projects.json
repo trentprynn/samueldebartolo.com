@@ -1,50 +1,6 @@
 [
     {
         "id": 0,
-        "name": "trinity site memorial",
-        "description": "This slender monument operates as a ruler to understand the blast radius of a 100-ton atomic bomb. As light enters the space, powerful monuments of reflection occur. Culminating in a solstice sunset lighting a singular tree at the epicenter of the explosion.",
-        "date": "2022",
-        "images": [
-            {
-                "src": "/assets/images/white_sands/1.png",
-                "alt": "white sands image one",
-                "width": "1920",
-                "height": "1080"
-            },
-            {
-                "src": "/assets/images/white_sands/2.png",
-                "alt": "white sands image two",
-                "width": "1920",
-                "height": "1080"
-            },
-            {
-                "src": "/assets/images/white_sands/3.png",
-                "alt": "white sands image three",
-                "width": "1920",
-                "height": "1080"
-            },
-            {
-                "src": "/assets/images/white_sands/4.png",
-                "alt": "white sands image four",
-                "width": "1920",
-                "height": "1080"
-            },
-            {
-                "src": "/assets/images/white_sands/5.png",
-                "alt": "white sands image five",
-                "width": "1920",
-                "height": "1080"
-            },
-            {
-                "src": "/assets/images/white_sands/6.png",
-                "alt": "white sands image six",
-                "width": "1920",
-                "height": "1080"
-            }
-        ]
-    },
-    {
-        "id": 1,
         "name": "undergrad thesis",
         "description": "housing prototype for urban development in desert cities.",
         "date": "2022",
@@ -52,38 +8,82 @@
             {
                 "src": "/assets/images/undergrad_thesis/1.jpg",
                 "alt": "undergrad thesis image one",
-                "width": "649",
-                "height": "1296"
+                "width": 864,
+                "height": 1997
             },
             {
                 "src": "/assets/images/undergrad_thesis/2.jpg",
                 "alt": "undergrad thesis image two",
-                "width": "649",
-                "height": "1296"
+                "width": 864,
+                "height": 1997
             },
             {
                 "src": "/assets/images/undergrad_thesis/3.jpg",
                 "alt": "undergrad thesis image three",
-                "width": "649",
-                "height": "1296"
+                "width": 864,
+                "height": 1997
             },
             {
                 "src": "/assets/images/undergrad_thesis/4.jpg",
                 "alt": "undergrad thesis image four",
-                "width": "649",
-                "height": "1296"
+                "width": 1224,
+                "height": 792
             },
             {
                 "src": "/assets/images/undergrad_thesis/5.jpg",
                 "alt": "undergrad thesis image five",
-                "width": "649",
-                "height": "1296"
+                "width": 1224,
+                "height": 792
             },
             {
                 "src": "/assets/images/undergrad_thesis/6.jpg",
                 "alt": "undergrad thesis image six",
-                "width": "649",
-                "height": "1296"
+                "width": 1224,
+                "height": 792
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "name": "trinity site memorial",
+        "description": "This slender monument operates as a ruler to understand the blast radius of a 100-ton atomic bomb. As light enters the space, powerful monuments of reflection occur. Culminating in a solstice sunset lighting a singular tree at the epicenter of the explosion.",
+        "date": "2022",
+        "images": [
+            {
+                "src": "/assets/images/white_sands/1.png",
+                "alt": "white sands image one",
+                "width": 1920,
+                "height": 1080
+            },
+            {
+                "src": "/assets/images/white_sands/2.png",
+                "alt": "white sands image two",
+                "width": 1920,
+                "height": 1080
+            },
+            {
+                "src": "/assets/images/white_sands/3.png",
+                "alt": "white sands image three",
+                "width": 1920,
+                "height": 1080
+            },
+            {
+                "src": "/assets/images/white_sands/4.png",
+                "alt": "white sands image four",
+                "width": 1920,
+                "height": 1080
+            },
+            {
+                "src": "/assets/images/white_sands/5.png",
+                "alt": "white sands image five",
+                "width": 1920,
+                "height": 1080
+            },
+            {
+                "src": "/assets/images/white_sands/6.png",
+                "alt": "white sands image six",
+                "width": 1920,
+                "height": 1080
             }
         ]
     },
@@ -96,20 +96,20 @@
             {
                 "src": "/assets/images/case_study_001/1.jpg",
                 "alt": "case study 001 image one",
-                "width": "2016",
-                "height": "1512"
+                "width": 2016,
+                "height": 1512
             },
             {
                 "src": "/assets/images/case_study_001/2.jpg",
                 "alt": "case study 001 image two",
-                "width": "2015",
-                "height": "1512"
+                "width": 2016,
+                "height": 1512
             },
             {
                 "src": "/assets/images/case_study_001/3.jpg",
                 "alt": "case study 001 image three",
-                "width": "1512",
-                "height": "2016"
+                "width": 1512,
+                "height": 2016
             }
         ]
     },
@@ -122,64 +122,38 @@
             {
                 "src": "/assets/images/sanctuary/1.jpg",
                 "alt": "sanctuary image one",
-                "width": "1728",
-                "height": "1152"
+                "width": 1728,
+                "height": 1152
             },
             {
                 "src": "/assets/images/sanctuary/2.jpg",
                 "alt": "sanctuary image two",
-                "width": "1728",
-                "height": "1152"
+                "width": 1728,
+                "height": 1152
+            },
+            {
+                "src": "/assets/images/sanctuary/3.jpg",
+                "alt": "sanctuary image three",
+                "width": 1728,
+                "height": 1145
             },
             {
                 "src": "/assets/images/sanctuary/4.jpg",
                 "alt": "sanctuary image four",
-                "width": "1728",
-                "height": "1145"
+                "width": 1728,
+                "height": 1152
             },
             {
                 "src": "/assets/images/sanctuary/5.jpg",
                 "alt": "sanctuary image five",
-                "width": "1728",
-                "height": "1152"
+                "width": 3060,
+                "height": 1980
             },
             {
                 "src": "/assets/images/sanctuary/6.jpg",
                 "alt": "sanctuary image six",
-                "width": "3060",
-                "height": "1980"
-            },
-            {
-                "src": "/assets/images/sanctuary/7.jpg",
-                "alt": "sanctuary image seven",
-                "width": "3060",
-                "height": "1981"
-            }
-        ]
-    },
-    {
-        "id": 4,
-        "name": "bisbee center",
-        "description": "third year of architecture school 7-week project developing the downtown of bisbee, arizona. program of space includes revitalization of a blighted urban site with community amenity and temporary housing.",
-        "date": "January 1, 2001",
-        "images": [
-            {
-                "src": "/assets/images/bisbee_center/1.jpg",
-                "alt": "bisbee image one",
-                "width": "2250",
-                "height": "1500"
-            },
-            {
-                "src": "/assets/images/bisbee_center/2.jpg",
-                "alt": "bisbee image two",
-                "width": "2250",
-                "height": "1500"
-            },
-            {
-                "src": "/assets/images/bisbee_center/3.jpg",
-                "alt": "bisbee image three",
-                "width": "2250",
-                "height": "1500"
+                "width": 3060,
+                "height": 1981
             }
         ]
     }
