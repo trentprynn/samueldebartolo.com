@@ -1,45 +1,27 @@
 [
     {
         "id": 0,
-        "name": "undergrad thesis",
-        "description": "housing prototype for urban development in desert cities.",
+        "name": "case study 001",
+        "description": "design build project at the university of arizona, images curtesy of Rachael Varin.",
         "date": "2022",
         "images": [
             {
-                "src": "/assets/images/undergrad_thesis/1.jpg",
-                "alt": "undergrad thesis image one",
-                "width": 864,
-                "height": 1997
+                "src": "/assets/images/case_study_001/1.jpg",
+                "alt": "case study 001 image one",
+                "width": 2016,
+                "height": 1512
             },
             {
-                "src": "/assets/images/undergrad_thesis/2.jpg",
-                "alt": "undergrad thesis image two",
-                "width": 864,
-                "height": 1997
+                "src": "/assets/images/case_study_001/2.jpg",
+                "alt": "case study 001 image two",
+                "width": 2016,
+                "height": 1512
             },
             {
-                "src": "/assets/images/undergrad_thesis/3.jpg",
-                "alt": "undergrad thesis image three",
-                "width": 864,
-                "height": 1997
-            },
-            {
-                "src": "/assets/images/undergrad_thesis/4.jpg",
-                "alt": "undergrad thesis image four",
-                "width": 1224,
-                "height": 792
-            },
-            {
-                "src": "/assets/images/undergrad_thesis/5.jpg",
-                "alt": "undergrad thesis image five",
-                "width": 1224,
-                "height": 792
-            },
-            {
-                "src": "/assets/images/undergrad_thesis/6.jpg",
-                "alt": "undergrad thesis image six",
-                "width": 1224,
-                "height": 792
+                "src": "/assets/images/case_study_001/3.jpg",
+                "alt": "case study 001 image three",
+                "width": 1512,
+                "height": 2016
             }
         ]
     },
@@ -89,32 +71,6 @@
     },
     {
         "id": 2,
-        "name": "case study 001",
-        "description": "design build project at the university of arizona. to be completed 2022.",
-        "date": "2022",
-        "images": [
-            {
-                "src": "/assets/images/case_study_001/1.jpg",
-                "alt": "case study 001 image one",
-                "width": 2016,
-                "height": 1512
-            },
-            {
-                "src": "/assets/images/case_study_001/2.jpg",
-                "alt": "case study 001 image two",
-                "width": 2016,
-                "height": 1512
-            },
-            {
-                "src": "/assets/images/case_study_001/3.jpg",
-                "alt": "case study 001 image three",
-                "width": 1512,
-                "height": 2016
-            }
-        ]
-    },
-    {
-        "id": 3,
         "name": "sanctuary",
         "description": "project completed for D U S T architects. brief to create a sanctuary in sedona, arizona to operate as a contemplation space.",
         "date": "March 3, 2003",
