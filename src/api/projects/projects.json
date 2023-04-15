@@ -6,19 +6,19 @@
         "date": "2022",
         "images": [
             {
-                "src": "/assets/images/case_study_001/1.jpg",
+                "src": "/assets/images/case_study_001/front.jpg",
                 "alt": "case study 001 image one",
                 "width": 2016,
                 "height": 1512
             },
             {
-                "src": "/assets/images/case_study_001/2.jpg",
+                "src": "/assets/images/case_study_001/external.jpg",
                 "alt": "case study 001 image two",
                 "width": 2016,
                 "height": 1512
             },
             {
-                "src": "/assets/images/case_study_001/3.jpg",
+                "src": "/assets/images/case_study_001/detail.jpg",
                 "alt": "case study 001 image three",
                 "width": 1512,
                 "height": 2016
