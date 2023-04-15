@@ -1,5 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
+import { SharedModule } from 'src/app/shared/shared.module'
 import { ProjectListComponent } from './project-list.component'
 
 describe('ProjectListComponent', () => {
@@ -8,7 +9,7 @@ describe('ProjectListComponent', () => {
 
     beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule],
+            imports: [HttpClientTestingModule, SharedModule],
             declarations: [ProjectListComponent],
         }).compileComponents()
     }))

@@ -25,8 +25,6 @@ export class ProjectListComponent implements OnInit {
             .getProjects()
             .subscribe({
                 next: (projects) => {
-                    console.log('PROJECTS')
-                    console.log(projects)
                     this.projects = projects
                 },
                 error: (error: HttpErrorResponse) => {
