@@ -36,13 +36,14 @@
           object-fit: cover;
       }
 
-      .bottom-right {
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          padding: 10px;
-          font-size: 20px;
-          color: black;
+      .name {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 10px;
+        font-size: 20px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
       }
     </style>
 </head>
@@ -51,13 +52,16 @@
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="/assets/images/front_1920_1280.jpg" width="1920" height="1280"  class="d-block w-100" alt="...">
+            <img src="/assets/images/city_3840_2160.jpg" width="3840" height="2160" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="/assets/images/top_1920_1080.png" width="1920" height="1080" class="d-block w-100" alt="...">
+            <img src="/assets/images/view_4800_2700.jpg" width="4800" height="2700"  class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="/assets/images/hall_1728_1152.jpg" width="1728" height="1152" class="d-block w-100" alt="...">
+            <img src="/assets/images/trees_4800_2700.jpg" width="4800" height="2700" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/assets/images/village_6000_4000.jpg" width="6000" height="4000" class="d-block w-100" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -70,7 +74,7 @@
         </button>
       </div>
 
-      <div class="bottom-right">Samuel DeBartolo</div>
+      <div class="name">Samuel DeBartolo</div>
 
     <script src="main.js"></script>
 </body>
