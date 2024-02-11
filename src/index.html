@@ -1,24 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta property="og:title" content="samuel debartolo" />
-        <meta property="og:image" content="https://samueldebartolo.com/assets/images/default/black.jpg" />
-        <meta
-            property="og:description"
-            content="Samuel DeBartolo is currently studying for a master's degree in architecture at Rice university. Upon completion he plans to move and is open to opportunities."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-            name="description"
-            content="Samuel DeBartolo is currently studying for a master's degree in architecture at Rice university. Upon completion he plans to move and is open to opportunities."
-        />
-        <title>samuel debartolo</title>
-        <link rel="apple-touch-icon" href="/assets/images/default/logo192.jpg" />
-        <link rel="manifest" href="manifest.json" />
-        <base href="/" />
-    </head>
-    <body>
-        <app-root></app-root>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>samuel debartolo</title>
+    <meta
+        name="description"
+        content="Samuel DeBartolo is currently studying for a master's degree in architecture at Rice university. Upon completion he plans to move and is open to opportunities."
+    />
+    <meta property="og:title" content="samuel debartolo" />
+    <meta property="og:image" content="https://samueldebartolo.com/assets/images/black.jpg" />
+    <meta
+        property="og:description"
+        content="Samuel DeBartolo is currently studying for a master's degree in architecture at Rice university. Upon completion he plans to move and is open to opportunities."
+    />
+    <link rel="apple-touch-icon" href="/assets/images/logo192.jpg" />
+    <link rel="manifest" href="manifest.json" />
+    <base href="/" />
+    <script async defer data-collect-dnt="true" src="https://sa.samueldebartolo.com/latest.js"></script>
+    <noscript>
+        <img src="https://sa.samueldebartolo.com/noscript.gif?collect-dnt=true" alt=""
+            referrerpolicy="no-referrer-when-downgrade" />
+    </noscript>
+
+    <styles src="./styles.css"></styles>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <style>
+      .carousel, .carousel-item, .carousel-item img {
+          height: calc(100 * var(--vh));
+          max-height: calc(100 * var(--vh));
+          object-fit: cover;
+      }
+
+      .bottom-right {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          padding: 10px;
+          font-size: 20px;
+          color: black;
+      }
+    </style>
+</head>
+
+<body>
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/assets/images/front_1920_1280.jpg" width="1920" height="1280"  class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/assets/images/top_1920_1080.png" width="1920" height="1080" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/assets/images/hall_1728_1152.jpg" width="1728" height="1152" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="bottom-right">Samuel DeBartolo</div>
+
+    <script src="main.js"></script>
+</body>
+
 </html>

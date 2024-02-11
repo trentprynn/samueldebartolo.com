@@ -9,12 +9,12 @@
             "sizes": "48x48"
         },
         {
-            "src": "/assets/images/default/logo192.jpg",
+            "src": "/assets/images/logo192.jpg",
             "type": "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "/assets/images/default/logo512.jpg",
+            "src": "/assets/images/logo512.jpg",
             "type": "image/png",
             "sizes": "512x512"
         }
