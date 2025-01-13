@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://samueldebartolo.com/
+Sitemap: https://samueldebartolo.com/sitemap.xml
