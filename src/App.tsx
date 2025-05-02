@@ -134,14 +134,14 @@ function Work() {
       <div className="flex flex-wrap gap-8 mt-4 justify-end">
         <div className="flex flex-col gap-2">
           <LazyImage
-            src="/assets/montrose/past_01_2685_2085.png"
+            src="/assets/montrose/past_01_2685_2085.jpeg"
             alt="Montrose Sanctuary exterior before renovation - img one"
             className="object-cover w-52 md:w-72"
             width={2685}
             height={2085}
           />
           <LazyImage
-            src="/assets/montrose/past_02_2685_2085.png"
+            src="/assets/montrose/past_02_2685_2085.jpeg"
             alt="Montrose Sanctuary exterior before renovation - img two"
             className="object-cover w-52 md:w-72"
             width={2685}
@@ -152,14 +152,14 @@ function Work() {
 
         <div className="flex flex-col gap-2">
           <LazyImage
-            src="/assets/montrose/present_01_2685_2085.png"
+            src="/assets/montrose/present_01_2685_2085.jpeg"
             alt="Montrose Sanctuary exterior during renovation - img one"
             className="object-cover w-52 md:w-72"
             width={2685}
             height={2085}
           />
           <LazyImage
-            src="/assets/montrose/present_02_2685_2085.png"
+            src="/assets/montrose/present_02_2685_2085.jpeg"
             alt="Montrose Sanctuary exterior during renovation - img two"
             className="object-cover w-52 md:w-72"
             width={2685}
@@ -170,14 +170,14 @@ function Work() {
 
         <div className="flex flex-col gap-2">
           <LazyImage
-            src="/assets/montrose/future_01_2685_2085.png"
+            src="/assets/montrose/future_01_2685_2085.jpeg"
             alt="Montrose Sanctuary exterior during renovation - img one"
             className="object-cover w-52 md:w-72"
             width={2685}
             height={2085}
           />
           <LazyImage
-            src="/assets/montrose/future_02_2685_2085.png"
+            src="/assets/montrose/future_02_2685_2085.jpeg"
             alt="Montrose Sanctuary exterior during renovation - img two"
             className="object-cover w-52 md:w-72"
             width={2685}
@@ -233,6 +233,7 @@ function LazyImage({
         alt={alt}
         width={width}
         height={height}
+        loading="lazy"
         className={className}
         onLoad={() => setLoading(false)}
         onError={() => setLoading(false)}
