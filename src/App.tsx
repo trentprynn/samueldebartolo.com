@@ -11,29 +11,27 @@ import {
   useLocation,
 } from "react-router";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  FaSquareFull,
-  FaRegSquareFull,
-  FaCircle,
-  FaCircleNotch,
-} from "react-icons/fa6";
+import { FaSquareFull, FaRegSquareFull } from "react-icons/fa6";
 import { useEffect, useRef, useState } from "react";
+import ReactGA from "react-ga4";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Route>
-      </Routes>
+      <TrackingWrapper>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route index element={<Contact />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Route>
+        </Routes>
+      </TrackingWrapper>
     </BrowserRouter>
   );
 }
-function Home() {
+
+function Contact() {
   type SketchImage = {
     src: string;
     alt: string;
@@ -44,7 +42,6 @@ function Home() {
   const [currentImage, setCurrentImage] = useState<SketchImage | null>(null);
   const didMount = useRef(false);
 
-  // List of all available images
   const sketchImages: SketchImage[] = [
     {
       src: "/assets/sketches/brocconi_2268_3024.png",
@@ -105,7 +102,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-end items-end md:flex-row md:items-start pt-[5rem] gap-6">
+    <div className="flex flex-col justify-end items-end md:flex-row md:items-start md:pt-[5rem] gap-6">
       <div className="order-2 md:order-1">
         {currentImage && (
           <LazyImage
@@ -117,8 +114,15 @@ function Home() {
           />
         )}
       </div>
-      <div className="flex flex-col order-1 pt-24 md:order-2">
-        <h1 className="text-2xl">samuel debartolo</h1>
+      <div className="flex flex-col items-end text-right order-1 md:pt-18 md:order-2">
+        <h1 className="text-2xl">samuel debartolo </h1>
+        <h2 className="text-xs font-semibold">studio</h2>
+        <a href="tel:+16026530533" className="pt-10 text-sm">
+          602.327.0390
+        </a>
+        <a href="mailto:studio@samueldebartolo.com" className="text-sm">
+          studio@samueldebartolo.com
+        </a>
       </div>
     </div>
   );
@@ -190,21 +194,6 @@ function Work() {
   );
 }
 
-function Contact() {
-  return (
-    <div className="flex flex-col justify-end items-end md:flex-row md:items-start pt-[5rem] gap-6">
-      <div className="order-2 md:order-1"></div>
-      <div className="flex flex-col order-1 pt-24 md:order-2">
-        <h1 className="text-2xl">samuel debartolo</h1>
-        <a href="tel:+16026530533" className="pt-12">
-          602.327.0390
-        </a>
-        <a href="mailto:samueldebartolo@me.com">samueldebartolo@me.com</a>
-      </div>
-    </div>
-  );
-}
-
 function LazyImage({
   src,
   alt,
@@ -218,11 +207,28 @@ function LazyImage({
   width?: number;
   height?: number;
 }) {
-  const [loading, setLoading] = useState(true);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    // decode() resolves even for cached assets and runs *after* mount,
+    // guaranteeing at least one render where `loaded` is still false.
+    const img = new Image();
+    img.src = src;
+    img
+      .decode()
+      .catch(() => {}) // ignore decode errors
+      .then(() => setLoaded(true));
+  }, [src]);
 
   return (
-    <div className="relative">
-      {loading && (
+    <motion.div
+      // container lets us keep the spinner in the same stacking context
+      className={`relative ${className ?? ""}`}
+      initial={{ opacity: 0 }} // always start invisible
+      animate={{ opacity: loaded ? 1 : 0 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
+    >
+      {!loaded && (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-600" />
         </div>
@@ -233,44 +239,26 @@ function LazyImage({
         alt={alt}
         width={width}
         height={height}
-        loading="lazy"
-        className={className}
-        onLoad={() => setLoading(false)}
-        onError={() => setLoading(false)}
+        className="block w-full h-full object-cover"
       />
-    </div>
+    </motion.div>
   );
 }
 
 function Layout() {
-  const location = useLocation();
-
   return (
     <div className="relative overflow-hidden bg-[#121212] text-white font-thin min-h-dvh">
-      <div className="absolute left-0 top-0 h-full">
-        <SideNav />
-      </div>
-
+      <SideNav className="absolute left-0 top-0 h-full" />
       <div className="h-dvh overflow-auto px-5 pt-3 pb-10 md:ml-40">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={location.pathname}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            /* No exit => old content is removed instantly */
-            transition={{ duration: 0.2, ease: "easeInOut" }}
-          >
-            <Outlet />
-          </motion.div>
-        </AnimatePresence>
+        <Outlet />
       </div>
     </div>
   );
 }
 
-function SideNav() {
+function SideNav({ className }: { className?: string }) {
   return (
-    <div className="h-full flex flex-col">
+    <div className={`h-full flex flex-col${className ? ` ${className}` : ""}`}>
       <SideNavEntry
         href="/work"
         activeIcon={<FaRegSquareFull size={14} />}
@@ -278,18 +266,10 @@ function SideNav() {
         text="built work"
       />
       <SideNavEntry
-        href="/contact"
+        href="/"
         activeIcon={<FaRegSquareFull size={14} />}
         inactiveIcon={<FaSquareFull size={14} />}
         text="contact"
-      />
-      {/* spacer */}
-      <SideNavEntry
-        href="/"
-        activeIcon={<FaCircleNotch size={14} />}
-        inactiveIcon={<FaCircle size={14} />}
-        className="mt-auto"
-        text="home"
       />
     </div>
   );
@@ -350,6 +330,31 @@ function SideNavEntry({
       )}
     </div>
   );
+}
+
+export function TrackingWrapper({ children }: { children: React.ReactNode }) {
+  const MEASUREMENT_ID = "G-RW1SEYQ6C9";
+  const isProd = import.meta.env.PROD;
+
+  const location = useLocation();
+
+  const initOnce = useRef(false);
+  useEffect(() => {
+    if (initOnce.current) return;
+    if (!isProd) return;
+    initOnce.current = true;
+    ReactGA.initialize(MEASUREMENT_ID);
+  }, [isProd]);
+
+  useEffect(() => {
+    if (!isProd) return;
+    ReactGA.send({
+      hitType: "pageview",
+      page: location.pathname + location.search,
+    });
+  }, [isProd, location]);
+
+  return <>{children}</>;
 }
 
 export default App;
