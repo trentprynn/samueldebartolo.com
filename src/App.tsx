@@ -329,7 +329,7 @@ function LazyImage({
 
 function Layout() {
   return (
-    <div className="relative overflow-auto h-screen min-h-screen bg-[#121212] text-white font-thin ">
+    <div className="relative overflow-auto h-dvh bg-[#121212] text-white font-thin">
       <div className="fixed top-0 left-0 w-[140px]">
         <SideNav />
       </div>
