@@ -131,63 +131,145 @@ function Contact() {
 function Work() {
   return (
     <div>
-      <div>
-        <h1 className="text-2xl font-thin text-end">sojourn montrose</h1>
+      <div className="flex flex-col items-end text-right">
+        <h1 className="text-2xl font-thin">sojourn montrose</h1>
+        <p className="mt-5 max-w-[50rem]">
+          while finishing my graduate thesis I began to aid a small
+          houston-based church in developing a property for their weekly
+          gathering. the goal was to lightly touch an existing historic church
+          while also creating a beautiful and sacred internal experience for
+          worship. the design strips the building back to its raw materials and
+          lets the work breath with updated light and air qualities.
+        </p>
       </div>
 
-      <div className="flex flex-wrap gap-8 mt-4 justify-end">
-        <div className="flex flex-col gap-2">
+      <div className="flex flex-wrap gap-4 mt-8 justify-end">
+        <div className="flex flex-col sm:flex-row gap-4">
           <LazyImage
-            src="/assets/montrose/past_01_2685_2085.jpeg"
-            alt="Montrose Sanctuary exterior before renovation - img one"
-            className="object-cover w-52 md:w-72"
-            width={2685}
-            height={2085}
+            src="/assets/montrose_2/exterior_front_with_children_2550_1650.jpeg"
+            alt="Montrose Sanctuary exterior featuring children playing"
+            className="object-cover"
+            width={2550}
+            height={1650}
           />
-          <LazyImage
-            src="/assets/montrose/past_02_2685_2085.jpeg"
-            alt="Montrose Sanctuary exterior before renovation - img two"
-            className="object-cover w-52 md:w-72"
-            width={2685}
-            height={2085}
-          />
-          <p>past</p>
         </div>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col sm:flex-row gap-4">
           <LazyImage
-            src="/assets/montrose/present_01_2685_2085.jpeg"
-            alt="Montrose Sanctuary exterior during renovation - img one"
-            className="object-cover w-52 md:w-72"
-            width={2685}
-            height={2085}
+            src="/assets/montrose_2/exterior_front_old_2550_1650.jpeg"
+            alt="Montrose Sanctuary front exterior before renovation"
+            className="object-cover"
+            width={2550}
+            height={1650}
           />
+
           <LazyImage
-            src="/assets/montrose/present_02_2685_2085.jpeg"
-            alt="Montrose Sanctuary exterior during renovation - img two"
-            className="object-cover w-52 md:w-72"
-            width={2685}
-            height={2085}
+            src="/assets/montrose_2/exterior_front_bright_2550_1650.jpeg"
+            alt="Montrose Sanctuary front exterior after renovation"
+            className="object-cover"
+            width={2550}
+            height={1650}
           />
-          <p>present</p>
         </div>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col sm:flex-row gap-4">
           <LazyImage
-            src="/assets/montrose/future_01_2685_2085.jpeg"
-            alt="Montrose Sanctuary exterior during renovation - img one"
-            className="object-cover w-52 md:w-72"
-            width={2685}
-            height={2085}
+            src="/assets/montrose_2/interior_pews_old_2550_1650.jpeg"
+            alt="Montrose Sanctuary interior pews before renovation"
+            className="object-cover"
+            width={2550}
+            height={1650}
           />
+
           <LazyImage
-            src="/assets/montrose/future_02_2685_2085.jpeg"
-            alt="Montrose Sanctuary exterior during renovation - img two"
-            className="object-cover w-52 md:w-72"
-            width={2685}
-            height={2085}
+            src="/assets/montrose_2/interior_pews_2_2550_1650.jpeg"
+            alt="Montrose Sanctuary interior pews after renovation"
+            className="object-cover"
+            width={2550}
+            height={1650}
           />
-          <p>future</p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4">
+          <LazyImage
+            src="/assets/montrose_2/exterior_rear_old_2550_1650.jpeg"
+            alt="Montrose Sanctuary interior pews before renovation"
+            className="object-cover"
+            width={2550}
+            height={1650}
+          />
+
+          <LazyImage
+            src="/assets/montrose_2/exterior_rear_2550_1650.jpeg"
+            alt="Montrose Sanctuary exterior rear after renovation"
+            className="object-cover"
+            width={2550}
+            height={1650}
+          />
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4">
+          <LazyImage
+            src="/assets/montrose_2/interior_pews_with_people_2_2550_1650.jpeg"
+            alt="Montrose Sanctuary interior after renovation with people gathered"
+            className="object-cover"
+            width={2550}
+            height={1650}
+          />
+        </div>
+
+        <div className="flex flex-col sm:flex-row justify-start gap-4">
+          <div className="flex-1">
+            <LazyImage
+              src="/assets/montrose_2/interior_pews_with_people_1_2550_1650.jpeg"
+              alt="Montrose Sanctuary interior after renovation with people gathered"
+              className="object-cover"
+              width={2550}
+              height={1650}
+            />
+          </div>
+          <div className="flex-1" />
+        </div>
+
+        <div className="flex flex-col sm:flex-row justify-end gap-4">
+          <div className="flex-1" />
+          <div className="flex-1">
+            <LazyImage
+              src="/assets/montrose_2/interior_play_room_2550_1650.jpeg"
+              alt="Montrose Sanctuary children's play room after renovation"
+              className="object-cover"
+              width={2550}
+              height={1650}
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4">
+          <LazyImage
+            src="/assets/montrose_2/interior_hallway_with_child_2550_1650.jpeg"
+            alt="Montrose Sanctuary interior hallway featuring child after renovation"
+            className="object-cover"
+            width={2550}
+            height={1650}
+          />
+
+          <LazyImage
+            src="/assets/montrose_2/interior_pews_1_2550_1650.jpeg"
+            alt="Montrose Sanctuary interior pews after renovation"
+            className="object-cover"
+            width={2550}
+            height={1650}
+          />
+        </div>
+
+        <div className="flex flex-row gap-4">
+          <LazyImage
+            src="/assets/montrose_2/exterior_front_dark_2550_1650.jpeg"
+            alt="Montrose Sanctuary exterior front at night after renovation"
+            className="object-cover"
+            width={2550}
+            height={1650}
+          />
         </div>
       </div>
     </div>
@@ -247,18 +329,23 @@ function LazyImage({
 
 function Layout() {
   return (
-    <div className="relative overflow-hidden bg-[#121212] text-white font-thin min-h-dvh">
-      <SideNav className="absolute left-0 top-0 h-full" />
-      <div className="h-dvh overflow-auto px-5 pt-3 pb-10 md:ml-40">
-        <Outlet />
+    <div className="relative overflow-auto h-screen min-h-screen bg-[#121212] text-white font-thin ">
+      <div className="fixed top-0 left-0 w-[140px]">
+        <SideNav />
+      </div>
+
+      <div className="flex flex-row justify-end ml-[140px] px-5 pt-3 pb-10">
+        <div className="max-w-[700px] w-full">
+          <Outlet />
+        </div>
       </div>
     </div>
   );
 }
 
-function SideNav({ className }: { className?: string }) {
+function SideNav() {
   return (
-    <div className={`h-full flex flex-col${className ? ` ${className}` : ""}`}>
+    <>
       <SideNavEntry
         href="/work"
         activeIcon={<FaRegSquareFull size={14} />}
@@ -271,7 +358,7 @@ function SideNav({ className }: { className?: string }) {
         inactiveIcon={<FaSquareFull size={14} />}
         text="contact"
       />
-    </div>
+    </>
   );
 }
 
