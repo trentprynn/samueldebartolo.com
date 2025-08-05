@@ -39,9 +39,6 @@ function Contact() {
     height: number;
   };
 
-  const [currentImage, setCurrentImage] = useState<SketchImage | null>(null);
-  const didMount = useRef(false);
-
   const sketchImages: SketchImage[] = [
     {
       src: "/assets/sketches/brocconi_2268_3024.png",
@@ -75,48 +72,52 @@ function Contact() {
     },
   ];
 
+  const [currentImage, setCurrentImage] = useState<SketchImage | null>(null);
+  const didMount = useRef(false);
+
   useEffect(() => {
-    // This ensures the effect logic runs only once
-    if (!didMount.current) {
-      didMount.current = true;
+    if (didMount.current) return;
+    didMount.current = true;
 
-      const lastViewed = localStorage.getItem("lastViewedSketch");
-      let availableImages = [...sketchImages];
+    const STORAGE_KEY = "lastSketchSrc";
+    const lastSrc = localStorage.getItem(STORAGE_KEY);
 
-      if (lastViewed) {
-        availableImages = availableImages.filter(
-          (img) => img.src !== lastViewed,
-        );
+    let nextIndex = 0;
+
+    if (lastSrc) {
+      const idx = sketchImages.findIndex((img) => img.src === lastSrc);
+      if (idx !== -1) {
+        nextIndex = (idx + 1) % sketchImages.length; // next (wrap)
+      } else {
+        // unknown src – reset cycle
+        localStorage.removeItem(STORAGE_KEY);
       }
-
-      if (availableImages.length === 0) {
-        availableImages = [...sketchImages];
-      }
-
-      const randomIndex = Math.floor(Math.random() * availableImages.length);
-      const selected = availableImages[randomIndex];
-
-      setCurrentImage(selected);
-      localStorage.setItem("lastViewedSketch", selected.src);
     }
+
+    const selected = sketchImages[nextIndex];
+    setCurrentImage(selected);
+    localStorage.setItem(STORAGE_KEY, selected.src);
   }, []);
 
   return (
     <div className="flex flex-col justify-end items-end md:flex-row md:items-start md:pt-[5rem] gap-6">
       <div className="order-2 md:order-1">
         {currentImage && (
-          <LazyImage
-            src={currentImage.src}
-            alt={currentImage.alt}
-            className="object-cover w-[300px] md:w-[400px]"
-            width={currentImage.width}
-            height={currentImage.height}
-          />
+          <div className="w-[300px] md:w-[400px]">
+            <LazyImage
+              src={currentImage.src}
+              alt={currentImage.alt}
+              width={currentImage.width}
+              height={currentImage.height}
+            />
+          </div>
         )}
       </div>
+
       <div className="flex flex-col items-end text-right order-1 md:pt-18 md:order-2">
-        <h1 className="text-2xl">samuel debartolo </h1>
+        <h1 className="text-2xl">samuel debartolo</h1>
         <h2 className="text-xs font-semibold">studio</h2>
+
         <a href="tel:+16026530533" className="pt-10 text-sm">
           602.327.0390
         </a>
@@ -148,7 +149,6 @@ function Work() {
           <LazyImage
             src="/assets/montrose/exterior_front_with_children_2550_1650.jpeg"
             alt="Montrose Sanctuary exterior featuring children playing"
-            className="object-cover"
             width={2550}
             height={1650}
           />
@@ -158,7 +158,6 @@ function Work() {
           <LazyImage
             src="/assets/montrose/exterior_front_old_2550_1650.jpeg"
             alt="Montrose Sanctuary front exterior before renovation"
-            className="object-cover"
             width={2550}
             height={1650}
           />
@@ -166,7 +165,6 @@ function Work() {
           <LazyImage
             src="/assets/montrose/exterior_front_bright_2550_1650.jpeg"
             alt="Montrose Sanctuary front exterior after renovation"
-            className="object-cover"
             width={2550}
             height={1650}
           />
@@ -176,7 +174,6 @@ function Work() {
           <LazyImage
             src="/assets/montrose/interior_pews_old_2550_1650.jpeg"
             alt="Montrose Sanctuary interior pews before renovation"
-            className="object-cover"
             width={2550}
             height={1650}
           />
@@ -184,7 +181,6 @@ function Work() {
           <LazyImage
             src="/assets/montrose/interior_pews_2_2550_1650.jpeg"
             alt="Montrose Sanctuary interior pews after renovation"
-            className="object-cover"
             width={2550}
             height={1650}
           />
@@ -194,7 +190,6 @@ function Work() {
           <LazyImage
             src="/assets/montrose/exterior_rear_old_2550_1650.jpeg"
             alt="Montrose Sanctuary interior pews before renovation"
-            className="object-cover"
             width={2550}
             height={1650}
           />
@@ -202,7 +197,6 @@ function Work() {
           <LazyImage
             src="/assets/montrose/exterior_rear_2550_1650.jpeg"
             alt="Montrose Sanctuary exterior rear after renovation"
-            className="object-cover"
             width={2550}
             height={1650}
           />
@@ -212,18 +206,16 @@ function Work() {
           <LazyImage
             src="/assets/montrose/interior_pews_with_people_2_2550_1650.jpeg"
             alt="Montrose Sanctuary interior after renovation with people gathered"
-            className="object-cover"
             width={2550}
             height={1650}
           />
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-start gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <LazyImage
               src="/assets/montrose/interior_pews_with_people_1_2550_1650.jpeg"
               alt="Montrose Sanctuary interior after renovation with people gathered"
-              className="object-cover"
               width={2550}
               height={1650}
             />
@@ -231,13 +223,12 @@ function Work() {
           <div className="flex-1" />
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-end gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1" />
           <div className="flex-1">
             <LazyImage
               src="/assets/montrose/interior_play_room_2550_1650.jpeg"
               alt="Montrose Sanctuary children's play room after renovation"
-              className="object-cover"
               width={2550}
               height={1650}
             />
@@ -248,7 +239,6 @@ function Work() {
           <LazyImage
             src="/assets/montrose/interior_hallway_with_child_2550_1650.jpeg"
             alt="Montrose Sanctuary interior hallway featuring child after renovation"
-            className="object-cover"
             width={2550}
             height={1650}
           />
@@ -256,7 +246,6 @@ function Work() {
           <LazyImage
             src="/assets/montrose/interior_pews_1_2550_1650.jpeg"
             alt="Montrose Sanctuary interior pews after renovation"
-            className="object-cover"
             width={2550}
             height={1650}
           />
@@ -266,7 +255,6 @@ function Work() {
           <LazyImage
             src="/assets/montrose/exterior_front_dark_2550_1650.jpeg"
             alt="Montrose Sanctuary exterior front at night after renovation"
-            className="object-cover"
             width={2550}
             height={1650}
           />
@@ -279,65 +267,30 @@ function Work() {
 function LazyImage({
   src,
   alt,
-  className,
   width,
   height,
 }: {
   src: string;
   alt?: string;
-  className?: string;
   width?: number;
   height?: number;
 }) {
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    // decode() resolves even for cached assets and runs *after* mount,
-    // guaranteeing at least one render where `loaded` is still false.
-    const img = new Image();
-    img.src = src;
-    img
-      .decode()
-      .catch(() => {}) // ignore decode errors
-      .then(() => setLoaded(true));
-  }, [src]);
-
   return (
-    <motion.div
-      // container lets us keep the spinner in the same stacking context
-      className={`relative ${className ?? ""}`}
-      initial={{ opacity: 0 }} // always start invisible
-      animate={{ opacity: loaded ? 1 : 0 }}
-      transition={{ duration: 0.35, ease: "easeOut" }}
-    >
-      {!loaded && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-600" />
-        </div>
-      )}
-
-      <img
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        className="block w-full h-full object-cover"
-      />
-    </motion.div>
+    <img src={src} alt={alt} width={width} height={height} loading="lazy" />
   );
 }
 
 function Layout() {
   return (
-    <div className="relative overflow-auto h-dvh bg-[#121212] text-white font-thin">
+    <div className="relative">
       <div className="fixed top-0 left-0 w-[140px]">
         <SideNav />
       </div>
 
       <div className="flex flex-row justify-end ml-[140px] px-5 pt-3 pb-10">
-        <div className="max-w-[700px] w-full">
+        <main className="max-w-[700px]">
           <Outlet />
-        </div>
+        </main>
       </div>
     </div>
   );
