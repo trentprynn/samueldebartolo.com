@@ -333,7 +333,7 @@ export function LazyImage({
       <Modal
         isOpen={open}
         onRequestClose={() => setOpen(false)}
-        overlayClassName="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+        overlayClassName="fixed inset-0 bg-black flex items-center justify-center z-50"
         className="outline-none"
         contentLabel={alt || "Image preview"}
       >
@@ -377,10 +377,7 @@ function SideNavEntry({ href, text }: { href: string; text: string }) {
   const isActive = useMatch(href);
 
   return (
-    <NavLink
-      to={href}
-      className="h-[42px] p-3 hover:bg-neutral-900 transition-all duration-200"
-    >
+    <NavLink to={href} className="p-3">
       <p className={`text-base  ${isActive ? "font-semibold underline" : ""}`}>
         {text}
       </p>
