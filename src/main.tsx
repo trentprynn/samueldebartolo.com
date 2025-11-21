@@ -1,11 +1,13 @@
+import "./global.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import Modal from "react-modal";
 
-Modal.setAppElement("#root");
+const rootElement = document.getElementById("root")!;
+Modal.setAppElement(rootElement);
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,

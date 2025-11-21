@@ -1,4 +1,3 @@
-import "./App.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import Modal from "react-modal";
@@ -105,28 +104,28 @@ function Home() {
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col">
-        <h1 className="text-2xl">samuel debartolo</h1>
-        <h2 className="text-xs font-semibold">studio</h2>
+      <h1 className="text-2xl">samuel debartolo</h1>
+      <h2 className="text-xs font-semibold">studio</h2>
 
-        <a href="tel:+16026530533" className="pt-10 text-sm">
-          602.327.0390
-        </a>
-        <a href="mailto:studio@samueldebartolo.com" className="text-sm">
-          studio@samueldebartolo.com
-        </a>
-      </div>
+      <a href="tel:+16026530533" className="pt-10 text-sm">
+        602.327.0390
+      </a>
+      <a href="mailto:studio@samueldebartolo.com" className="text-sm">
+        studio@samueldebartolo.com
+      </a>
 
-      {currentImage && (
-        <div className="mt-4">
+      <div className="mt-4">
+        {currentImage ? (
           <LazyImage
             src={currentImage.src}
             alt={currentImage.alt}
             width={300}
             height={500}
           />
-        </div>
-      )}
+        ) : (
+          <div className="w-[300px] h-[500px] bg-gray-200 animate-pulse" />
+        )}
+      </div>
     </div>
   );
 }
@@ -312,9 +311,9 @@ export function LazyImage({
   height,
 }: {
   src: string;
-  alt?: string;
-  width?: number;
-  height?: number;
+  alt: string;
+  width: number;
+  height: number;
 }) {
   const [open, setOpen] = useState(false);
 
