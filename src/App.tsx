@@ -103,33 +103,35 @@ function Contact() {
   }, []);
 
   return (
-    <>
-      <h1 className="text-2xl">samuel debartolo</h1>
-      <h2 className="text-xs font-semibold">studio</h2>
+    <div className="flex flex-row flex-wrap gap-12">
+      <div className="">
+        <h1 className="text-2xl">samuel debartolo</h1>
+        <h2 className="text-xs font-semibold">studio</h2>
 
-      <p className="mt-4 text-sm">
-        <a href="tel:+16023270390">602.327.0390</a>
-      </p>
+        <div className="mt-8">
+          <p className="text-sm">
+            <a href="tel:+16023270390">602.327.0390</a>
+          </p>
 
-      <p className="text-sm">
-        <a href="mailto:studio@samueldebartolo.com">
-          studio@samueldebartolo.com
-        </a>
-      </p>
+          <p className="text-sm">
+            <a href="mailto:studio@samueldebartolo.com">
+              studio@samueldebartolo.com
+            </a>
+          </p>
+        </div>
+      </div>
 
       {currentImage ? (
-        <div className="mt-20">
-          <LazyImage
-            src={currentImage.src}
-            alt={currentImage.alt}
-            width={300}
-            height={500}
-          />
-        </div>
+        <LazyImage
+          src={currentImage.src}
+          alt={currentImage.alt}
+          width={300}
+          height={400}
+        />
       ) : (
-        <div className="w-[300px] h-[500px]" />
+        <div className="w-[300px] h-[400px]" />
       )}
-    </>
+    </div>
   );
 }
 
@@ -354,27 +356,25 @@ export function LazyImage({
 
 function Layout() {
   return (
-    <>
-      <div className="flex flex-row justify-center">
-        <div className="w-[300px]">
-          <NavBar />
-        </div>
+    <div className="p-6">
+      <div className="flex flex-row justify-start sm:justify-center">
+        <NavBar />
       </div>
 
-      <div className="flex flex-row justify-center">
-        <div className="max-w-[700px] px-10 mt-4">
+      <div className="flex flex-row justify-start sm:justify-center">
+        <div className="max-w-[700px] mt-10 md:mt-16">
           <main>
             <Outlet />
           </main>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
 function NavBar() {
   return (
-    <div className="flex flex-row gap-12 py-4">
+    <div className="flex flex-row gap-12">
       <SideNavEntry href="/" text="contact" />
       <SideNavEntry href="/work" text="work" />
       <SideNavEntry href="/press" text="press" />
