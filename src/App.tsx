@@ -21,7 +21,7 @@ function App() {
       <TrackingWrapper>
         <Routes>
           <Route element={<Layout />}>
-            <Route index element={<Home />} />
+            <Route index element={<Contact />} />
             <Route path="/work" element={<Work />} />
             <Route path="/press" element={<Press />} />
             <Route path="*" element={<Navigate to="/" replace />} />
@@ -46,7 +46,7 @@ function Press() {
   );
 }
 
-function Home() {
+function Contact() {
   type SketchImage = {
     src: string;
     alt: string;
@@ -54,23 +54,23 @@ function Home() {
 
   const sketchImages: SketchImage[] = [
     {
-      src: "/assets/sketches/brocconi_680_907.png",
+      src: "/assets/sketches/brocconi_671_809.png",
       alt: "Brocconi sketch",
     },
     {
-      src: "/assets/sketches/catholic_church_807_879.png",
+      src: "/assets/sketches/catholic_church_710_864.png",
       alt: "Catholic Church sketch",
     },
     {
-      src: "/assets/sketches/kunsthaus_zurich_907_1210.png",
+      src: "/assets/sketches/kunsthaus_zurich_595_788.png",
       alt: "Kunsthaus Zurich sketch",
     },
     {
-      src: "/assets/sketches/st_benedict_681_907.png",
+      src: "/assets/sketches/st_benedict_612_831.png",
       alt: "St Benedict sketch",
     },
     {
-      src: "/assets/sketches/therme_vals_299_399.png",
+      src: "/assets/sketches/therme_vals_287_327.png",
       alt: "Therme Vals sketch",
     },
   ];
@@ -118,7 +118,7 @@ function Home() {
       </p>
 
       {currentImage ? (
-        <div className="mt-8">
+        <div className="mt-20">
           <LazyImage
             src={currentImage.src}
             alt={currentImage.alt}
@@ -330,13 +330,13 @@ export function LazyImage({
         effect="blur"
         threshold={25}
         onClick={() => setOpen(true)}
-        className="cursor-zoom-in"
+        className="cursor-zoom-in block object-fill"
       />
 
       <Modal
         isOpen={open}
         onRequestClose={() => setOpen(false)}
-        overlayClassName="fixed inset-0 bg-black flex items-center justify-center z-50"
+        overlayClassName="fixed inset-0 bg-neutral-900 flex items-center justify-center z-50"
         className="outline-none"
         contentLabel={alt || "Image preview"}
       >
@@ -355,21 +355,27 @@ export function LazyImage({
 function Layout() {
   return (
     <>
-      <NavBar />
-
-      <main className="flex flex-row justify-center mt-5 p-5">
-        <div className="max-w-[700px]">
-          <Outlet />
+      <div className="flex flex-row justify-center">
+        <div className="w-[300px]">
+          <NavBar />
         </div>
-      </main>
+      </div>
+
+      <div className="flex flex-row justify-center">
+        <div className="max-w-[700px] px-10 mt-4">
+          <main>
+            <Outlet />
+          </main>
+        </div>
+      </div>
     </>
   );
 }
 
 function NavBar() {
   return (
-    <div className="flex flex-row justify-center gap-12">
-      <SideNavEntry href="/" text="home" />
+    <div className="flex flex-row gap-12 py-4">
+      <SideNavEntry href="/" text="contact" />
       <SideNavEntry href="/work" text="work" />
       <SideNavEntry href="/press" text="press" />
     </div>
@@ -380,10 +386,8 @@ function SideNavEntry({ href, text }: { href: string; text: string }) {
   const isActive = useMatch(href);
 
   return (
-    <NavLink to={href} className="p-3">
-      <p className={`text-base  ${isActive ? "font-semibold underline" : ""}`}>
-        {text}
-      </p>
+    <NavLink to={href}>
+      <p className={`text-base  ${isActive ? "font-bold" : ""}`}>{text}</p>
     </NavLink>
   );
 }
