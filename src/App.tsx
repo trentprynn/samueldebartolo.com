@@ -107,7 +107,7 @@ function Home() {
       <h1 className="text-2xl">samuel debartolo</h1>
       <h2 className="text-xs font-semibold">studio</h2>
 
-      <a href="tel:+16026530533" className="pt-10 text-sm">
+      <a href="tel:+16023270390" className="pt-10 text-sm">
         602.327.0390
       </a>
       <a href="mailto:studio@samueldebartolo.com" className="text-sm">
