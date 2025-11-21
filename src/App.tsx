@@ -114,18 +114,16 @@ function Home() {
         studio@samueldebartolo.com
       </a>
 
-      <div className="mt-4">
-        {currentImage ? (
+      {currentImage && (
+        <div className="mt-4">
           <LazyImage
             src={currentImage.src}
             alt={currentImage.alt}
             width={300}
             height={500}
           />
-        ) : (
-          <div className="w-[300px] h-[500px] bg-gray-200 animate-pulse" />
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
