@@ -103,19 +103,22 @@ function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col">
+    <>
       <h1 className="text-2xl">samuel debartolo</h1>
       <h2 className="text-xs font-semibold">studio</h2>
 
-      <a href="tel:+16023270390" className="pt-10 text-sm">
-        602.327.0390
-      </a>
-      <a href="mailto:studio@samueldebartolo.com" className="text-sm">
-        studio@samueldebartolo.com
-      </a>
+      <p className="mt-4 text-sm">
+        <a href="tel:+16023270390">602.327.0390</a>
+      </p>
 
-      {currentImage && (
-        <div className="mt-4">
+      <p className="text-sm">
+        <a href="mailto:studio@samueldebartolo.com">
+          studio@samueldebartolo.com
+        </a>
+      </p>
+
+      {currentImage ? (
+        <div className="mt-8">
           <LazyImage
             src={currentImage.src}
             alt={currentImage.alt}
@@ -123,8 +126,10 @@ function Home() {
             height={500}
           />
         </div>
+      ) : (
+        <div className="w-[300px] h-[500px]" />
       )}
-    </div>
+    </>
   );
 }
 
