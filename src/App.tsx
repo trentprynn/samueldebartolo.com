@@ -55,23 +55,23 @@ function Home() {
 
   const sketchImages: SketchImage[] = [
     {
-      src: "/assets/sketches/brocconi_2268_3024.png",
+      src: "/assets/sketches/brocconi_680_907.png",
       alt: "Brocconi sketch",
     },
     {
-      src: "/assets/sketches/catholic_church_2689_2930.png",
+      src: "/assets/sketches/catholic_church_807_879.png",
       alt: "Catholic Church sketch",
     },
     {
-      src: "/assets/sketches/kunsthaus_zurich_3024_4032.png",
+      src: "/assets/sketches/kunsthaus_zurich_907_1210.png",
       alt: "Kunsthaus Zurich sketch",
     },
     {
-      src: "/assets/sketches/st_benedict_2269_3024.png",
+      src: "/assets/sketches/st_benedict_681_907.png",
       alt: "St Benedict sketch",
     },
     {
-      src: "/assets/sketches/therme_vals_998_1331.png",
+      src: "/assets/sketches/therme_vals_299_399.png",
       alt: "Therme Vals sketch",
     },
   ];
