@@ -34,13 +34,45 @@ function App() {
 
 function Press() {
   return (
-    <div className="mt-5 flex flex-col gap-4">
+    <div className="flex flex-col gap-6">
       <a
         href="https://aia-arizona.org/award/sojourn-montrose/"
         target="_blank"
         className="lowercase"
       >
-        2025 AIA Arizona: Distinguished Architecture / Sojourn Montrose
+        aia arizona distinguished architecture / sojourn montrose
+      </a>
+
+      <a
+        href="https://www.chron.com/news/houston-texas/article/montrose-church-sold-19404243.php"
+        target="_blank"
+        className="lowercase"
+      >
+        houston chronicle article on sojourn montrose
+      </a>
+
+      <a
+        href="https://repository.rice.edu/items/4e6c2904-35f1-4b2d-b865-f88d476db349"
+        target="_blank"
+        className="lowercase"
+      >
+        rice architecture thesis publication
+      </a>
+
+      <a
+        href="https://everyshelter.org/tukul-book/"
+        target="_blank"
+        className="lowercase"
+      >
+        every shelter publication / examinations in relief architecture
+      </a>
+
+      <a
+        href="https://capla.arizona.edu/studio/spring-2021-richard-kennedy-fourth-year-prize"
+        target="_blank"
+        className="lowercase"
+      >
+        uofa bachelor of architecture prize
       </a>
     </div>
   );
