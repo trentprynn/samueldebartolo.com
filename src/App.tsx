@@ -191,152 +191,40 @@ function Work() {
         />
 
         <LazyImage
-          src="/assets/montrose/interior_pews_2_2550_1650.jpeg"
-          alt="Montrose Sanctuary interior pews after renovation"
+          src="/assets/montrose/interior_pews_2550_1650.jpeg"
+          alt="Montrose Sanctuary interior pews"
           width={300}
           height={195}
         />
 
         <LazyImage
           src="/assets/montrose/exterior_rear_2550_1650.jpeg"
-          alt="Montrose Sanctuary exterior rear after renovation"
+          alt="Montrose Sanctuary exterior rear"
           width={300}
           height={195}
         />
 
         <LazyImage
           src="/assets/montrose/interior_play_room_2550_1650.jpeg"
-          alt="Montrose Sanctuary children's play room after renovation"
+          alt="Montrose Sanctuary children's play room"
           width={300}
           height={195}
         />
 
         <LazyImage
           src="/assets/montrose/exterior_front_dark_2550_1650.jpeg"
-          alt="Montrose Sanctuary exterior front at night after renovation"
+          alt="Montrose Sanctuary exterior front at night"
+          width={300}
+          height={195}
+        />
+
+        <LazyImage
+          src="/assets/montrose/interior_with_people_1651_1101.jpeg"
+          alt="Montrose Sanctuary interior during service"
           width={300}
           height={195}
         />
       </div>
-
-      {/*
-      <div className="flex flex-wrap gap-4 mt-8">
-        <div className="flex flex-col sm:flex-row gap-4">
-          <LazyImage
-            src="/assets/montrose/exterior_front_with_children_2550_1650.jpeg"
-            alt="Montrose Sanctuary exterior featuring children playing"
-            width={300}
-            height={195}
-          />
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-4">
-          <LazyImage
-            src="/assets/montrose/exterior_front_old_2550_1650.jpeg"
-            alt="Montrose Sanctuary front exterior before renovation"
-            width={300}
-            height={195}
-          />
-
-          <LazyImage
-            src="/assets/montrose/exterior_front_bright_2550_1650.jpeg"
-            alt="Montrose Sanctuary front exterior after renovation"
-            width={300}
-            height={195}
-          />
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-4">
-          <LazyImage
-            src="/assets/montrose/interior_pews_old_2550_1650.jpeg"
-            alt="Montrose Sanctuary interior pews before renovation"
-            width={300}
-            height={195}
-          />
-
-          <LazyImage
-            src="/assets/montrose/interior_pews_2_2550_1650.jpeg"
-            alt="Montrose Sanctuary interior pews after renovation"
-            width={300}
-            height={195}
-          />
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-4">
-          <LazyImage
-            src="/assets/montrose/exterior_rear_old_2550_1650.jpeg"
-            alt="Montrose Sanctuary interior pews before renovation"
-            width={300}
-            height={195}
-          />
-
-          <LazyImage
-            src="/assets/montrose/exterior_rear_2550_1650.jpeg"
-            alt="Montrose Sanctuary exterior rear after renovation"
-            width={300}
-            height={195}
-          />
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-4">
-          <LazyImage
-            src="/assets/montrose/interior_pews_with_people_2_2550_1650.jpeg"
-            alt="Montrose Sanctuary interior after renovation with people gathered"
-            width={300}
-            height={195}
-          />
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-4">
-          <div className="flex-1">
-            <LazyImage
-              src="/assets/montrose/interior_pews_with_people_1_2550_1650.jpeg"
-              alt="Montrose Sanctuary interior after renovation with people gathered"
-              width={300}
-              height={195}
-            />
-          </div>
-          <div className="flex-1" />
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-4">
-          <div className="flex-1" />
-          <div className="flex-1">
-            <LazyImage
-              src="/assets/montrose/interior_play_room_2550_1650.jpeg"
-              alt="Montrose Sanctuary children's play room after renovation"
-              width={300}
-              height={195}
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-4">
-          <LazyImage
-            src="/assets/montrose/interior_hallway_with_child_2550_1650.jpeg"
-            alt="Montrose Sanctuary interior hallway featuring child after renovation"
-            width={300}
-            height={195}
-          />
-
-          <LazyImage
-            src="/assets/montrose/interior_pews_1_2550_1650.jpeg"
-            alt="Montrose Sanctuary interior pews after renovation"
-            width={300}
-            height={195}
-          />
-        </div>
-
-        <div className="flex flex-row gap-4">
-          <LazyImage
-            src="/assets/montrose/exterior_front_dark_2550_1650.jpeg"
-            alt="Montrose Sanctuary exterior front at night after renovation"
-            width={300}
-            height={195}
-          />
-        </div>
-      </div>
-      */}
     </>
   );
 }
