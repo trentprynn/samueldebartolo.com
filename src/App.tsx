@@ -219,7 +219,7 @@ function Work() {
         />
 
         <LazyImage
-          src="/assets/montrose/interior_with_people_1651_1101.jpeg"
+          src="/assets/montrose/interior_service_2550_1650.jpeg"
           alt="Montrose Sanctuary interior during service"
           width={300}
           height={195}
