@@ -295,14 +295,15 @@ function Layout() {
 function NavBar() {
   return (
     <div className="flex flex-row gap-12">
-      <SideNavEntry href="/" text="contact" />
-      <SideNavEntry href="/work" text="work" />
-      <SideNavEntry href="/press" text="press" />
+      <NavEntry href="/" text="contact" />
+      <NavEntry href="/work" text="work" />
+      <NavEntry href="/press" text="press" />
+      <NavEntry href="https://plynefurniture.com" text="shop" />
     </div>
   );
 }
 
-function SideNavEntry({ href, text }: { href: string; text: string }) {
+function NavEntry({ href, text }: { href: string; text: string }) {
   const isActive = useMatch(href);
 
   return (
