@@ -187,10 +187,13 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     }
 
     .image-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px 14px;
     }
 
-    .gallery-item {
+    .gallery-item,
+    .gallery-item:nth-child(odd),
+    .gallery-item:nth-child(even) {
       grid-column: auto;
       margin-top: 0;
       --image-frame-aspect-ratio: 4 / 3;
@@ -201,6 +204,11 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     .project-details div {
       grid-template-columns: 1fr;
       gap: 5px;
+    }
+
+    .image-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
     }
   }
 </style>
