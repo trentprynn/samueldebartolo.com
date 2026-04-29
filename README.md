@@ -4,10 +4,10 @@ Repository for Samuel DeBartolo's architecture portfolio
 ## Development
 1. clone the repository
 2. navigate into it 
-5. run `yarn`
+3. run `npm install`
     - installs dependencies
-6. run `yarn dev`
-    - runs application with hot reloading enabled
+4. run `npm run dev`
+    - runs the Astro dev server with hot reloading enabled
 
 ## Deployment
 - On a push to master the website will be deployed automatically by Railway

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="sd">
+  <rect width="512" height="512" fill="#171715" />
+  <rect x="5" y="5" width="502" height="502" fill="none" stroke="#9c988e" stroke-width="10" />
+  <text
+    x="256"
+    y="252"
+    fill="#eeeae1"
+    font-family="Helvetica, Arial, sans-serif"
+    font-size="296"
+    font-weight="400"
+    letter-spacing="0"
+    text-anchor="middle"
+    dominant-baseline="middle"
+  >sd</text>
+</svg>

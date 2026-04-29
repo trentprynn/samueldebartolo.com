@@ -1,0 +1,136 @@
+---
+import { getImage, Picture } from "astro:assets";
+import type { SiteImage } from "../data/images";
+
+type Props = {
+  image: SiteImage;
+  class?: string;
+  expandable?: boolean;
+};
+
+const { image, expandable = true } = Astro.props;
+const className = Astro.props.class;
+const previewWidth = Math.min(image.src.width, 2000);
+const preview = expandable
+  ? await getImage({
+      src: image.src,
+      width: previewWidth,
+      format: image.format,
+    })
+  : null;
+---
+
+<figure class:list={["image-frame", className]}>
+  {
+    expandable ? (
+      <button
+        type="button"
+        class="image-button"
+        data-preview-open
+        data-preview-src={preview?.src}
+        data-preview-alt={image.alt}
+        aria-label={`Open image preview: ${image.alt}`}
+      >
+        <Picture
+          src={image.src}
+          alt={image.alt}
+          widths={image.widths}
+          sizes={image.sizes}
+          formats={["webp"]}
+          fallbackFormat={image.format}
+          loading="lazy"
+          decoding="async"
+        />
+        <span class="expand-cue" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 3H3v6M15 3h6v6M21 15v6h-6M3 15v6h6" />
+            <path d="M3 3l7 7M21 3l-7 7M21 21l-7-7M3 21l7-7" />
+          </svg>
+        </span>
+      </button>
+    ) : (
+      <div class="image-button image-button-static">
+        <Picture
+          src={image.src}
+          alt={image.alt}
+          widths={image.widths}
+          sizes={image.sizes}
+          formats={["webp"]}
+          fallbackFormat={image.format}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    )
+  }
+  <figcaption>{image.caption}</figcaption>
+</figure>
+
+<style>
+  .image-frame {
+    margin: 0;
+  }
+
+  .image-frame figcaption {
+    margin-top: 10px;
+    color: var(--color-text-subtle);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .image-button {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: var(--image-frame-aspect-ratio, auto);
+    cursor: zoom-in;
+    overflow: hidden;
+    background: var(--color-surface-tinted);
+  }
+
+  .image-button-static {
+    cursor: default;
+  }
+
+  .image-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-button picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .expand-cue {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    background: rgba(232, 230, 223, 0.92);
+    color: var(--color-text);
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 160ms ease;
+  }
+
+  .expand-cue svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+  }
+
+  .image-button:hover .expand-cue,
+  .image-button:focus-visible .expand-cue {
+    opacity: 1;
+  }
+</style>

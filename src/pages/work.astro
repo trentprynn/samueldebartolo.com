@@ -1,0 +1,206 @@
+---
+import ImageFrame from "../components/ImageFrame.astro";
+import { projectImages } from "../data/images";
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+
+<SiteLayout
+  title="work | samuel debartolo"
+  description="Selected architecture work by Samuel DeBartolo, including the Sojourn Montrose adaptive reuse project in Houston, Texas."
+>
+  <article class="project-page" aria-labelledby="project-title">
+    <section class="project-intro">
+      <div class="project-heading">
+        <p class="eyebrow">01 / selected work</p>
+        <h1 id="project-title" class="project-title">sojourn montrose</h1>
+      </div>
+
+      <dl class="project-details">
+        <div>
+          <dt>project</dt>
+          <dd>sojourn montrose</dd>
+        </div>
+        <div>
+          <dt>location</dt>
+          <dd>houston, texas</dd>
+        </div>
+        <div>
+          <dt>type</dt>
+          <dd>adaptive reuse / worship</dd>
+        </div>
+        <div>
+          <dt>role</dt>
+          <dd>design, documentation, construction support</dd>
+        </div>
+      </dl>
+
+      <div class="project-text">
+        <p>
+          while finishing my graduate thesis I began to aid a small
+          houston-based church in developing a property for their weekly
+          gathering. the goal was to lightly touch an existing historic church
+          while also creating a beautiful and sacred internal experience for
+          worship. the design strips the building back to its raw materials and
+          lets the work breathe with updated light and air qualities.
+        </p>
+      </div>
+    </section>
+
+    <section class="image-grid" aria-label="project image gallery">
+      {
+        projectImages.map((image) => (
+          <div class="gallery-item">
+            <ImageFrame image={image} />
+          </div>
+        ))
+      }
+    </section>
+  </article>
+</SiteLayout>
+
+<style>
+  .project-page {
+    display: grid;
+    gap: clamp(32px, 4.8vw, 64px);
+  }
+
+  .project-intro {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: clamp(18px, 2.7vw, 32px);
+    row-gap: clamp(28px, 4vw, 46px);
+    align-items: start;
+  }
+
+  .project-heading {
+    grid-column: 1 / span 4;
+    display: grid;
+    gap: clamp(24px, 3.8vw, 44px);
+  }
+
+  .project-title {
+    max-width: 7.5em;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(46px, 5.2vw, 74px);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 0.96;
+  }
+
+  .project-details {
+    grid-column: 5 / span 3;
+    margin: 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .project-details div {
+    display: grid;
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 16px;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+    padding: 13px 0;
+  }
+
+  .project-details dt {
+    color: var(--color-text-subtle);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .project-details dd {
+    min-width: 0;
+    margin: 0;
+    color: var(--color-text);
+    font-size: 12px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .project-text {
+    grid-column: 9 / span 4;
+    max-width: 34ch;
+    color: var(--color-text-muted);
+    font-size: clamp(17px, 1.45vw, 21px);
+    line-height: 1.38;
+  }
+
+  .project-text p {
+    margin: 0;
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: clamp(38px, 5.4vw, 72px) clamp(18px, 2.7vw, 32px);
+  }
+
+  .gallery-item {
+    min-width: 0;
+    --image-frame-aspect-ratio: 17 / 11;
+  }
+
+  .gallery-item:nth-child(odd) {
+    grid-column: 1 / span 6;
+  }
+
+  .gallery-item:nth-child(even) {
+    grid-column: 7 / span 6;
+    margin-top: clamp(42px, 5.5vw, 76px);
+  }
+
+  @media (max-width: 980px) {
+    .project-intro {
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+    }
+
+    .project-heading {
+      grid-column: 1 / span 3;
+    }
+
+    .project-details {
+      grid-column: 4 / span 4;
+    }
+
+    .project-text {
+      grid-column: 4 / span 5;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .project-intro {
+      grid-template-columns: 1fr;
+      row-gap: 32px;
+    }
+
+    .project-heading,
+    .project-details,
+    .project-text {
+      grid-column: auto;
+    }
+
+    .project-title {
+      font-size: clamp(42px, 15vw, 66px);
+    }
+
+    .image-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+      grid-column: auto;
+      margin-top: 0;
+      --image-frame-aspect-ratio: 4 / 3;
+    }
+  }
+
+  @media (max-width: 440px) {
+    .project-details div {
+      grid-template-columns: 1fr;
+      gap: 5px;
+    }
+  }
+</style>

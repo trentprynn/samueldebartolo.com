@@ -10,17 +10,17 @@
         },
         {
             "src": "/logo192.jpg",
-            "type": "image/png",
+            "type": "image/jpeg",
             "sizes": "192x192"
         },
         {
             "src": "/logo512.jpg",
-            "type": "image/png",
+            "type": "image/jpeg",
             "sizes": "512x512"
         }
     ],
     "start_url": "/",
     "display": "browser",
-    "theme_color": "#000000",
-    "background_color": "#ffffff"
+    "theme_color": "#171715",
+    "background_color": "#171715"
 }

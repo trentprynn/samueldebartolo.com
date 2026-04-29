@@ -1,0 +1,89 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+
+<SiteLayout
+  title="not found | samuel debartolo"
+  description="The requested page could not be found."
+  noindex
+>
+  <section class="not-found" aria-labelledby="not-found-title">
+    <div class="not-found-copy">
+      <p class="eyebrow">404 / not found</p>
+      <h1 id="not-found-title">page not found</h1>
+      <p>
+        the requested page may have moved, or the address may have been entered
+        incorrectly.
+      </p>
+      <a href="/">return home</a>
+    </div>
+  </section>
+</SiteLayout>
+
+<style>
+  .not-found {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: clamp(18px, 2.7vw, 32px);
+    row-gap: clamp(40px, 8vw, 92px);
+    align-items: start;
+    min-height: min(62vh, 560px);
+    padding-top: clamp(42px, 8vw, 92px);
+  }
+
+  .not-found-copy {
+    grid-column: 5 / span 6;
+    display: grid;
+    gap: clamp(20px, 3vw, 34px);
+  }
+
+  .not-found-copy h1 {
+    max-width: 9em;
+    margin: 0;
+    color: var(--color-text);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(44px, 5.2vw, 74px);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 0.96;
+  }
+
+  .not-found-copy p:not(.eyebrow) {
+    max-width: 34ch;
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: clamp(17px, 1.45vw, 21px);
+    line-height: 1.38;
+  }
+
+  .not-found-copy a {
+    width: fit-content;
+    border-bottom: 1px solid var(--color-border-strong);
+    color: var(--color-text);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    transition:
+      border-color 160ms ease,
+      color 160ms ease;
+  }
+
+  .not-found-copy a:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 760px) {
+    .not-found {
+      display: grid;
+      grid-template-columns: 1fr;
+      min-height: auto;
+      padding-top: 42px;
+    }
+
+    .not-found-copy {
+      grid-column: 1;
+    }
+  }
+</style>

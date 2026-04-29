@@ -1,0 +1,127 @@
+---
+import { getImage } from "astro:assets";
+import { sketchImages, type SiteImage } from "../data/images";
+
+async function sketchData(image: SiteImage) {
+  const variants = await Promise.all(
+    image.widths
+      .filter((width) => width <= image.src.width)
+      .map((width) =>
+        getImage({
+          src: image.src,
+          width,
+          format: image.format,
+        }),
+      ),
+  );
+  const fallback = variants.at(-1);
+
+  if (!fallback) {
+    throw new Error(`No generated sketch variants for ${image.caption}.`);
+  }
+
+  return {
+    alt: image.alt,
+    caption: image.caption,
+    height: fallback.attributes.height,
+    sizes: image.sizes,
+    src: fallback.src,
+    srcset: variants
+      .map((variant) => `${variant.src} ${variant.attributes.width}w`)
+      .join(", "),
+    width: fallback.attributes.width,
+  };
+}
+
+const sketches = await Promise.all(sketchImages.map(sketchData));
+const initialSketch = sketches[0];
+---
+
+<figure class="image-frame sketch-image" data-rotating-sketch>
+  <div class="image-button image-button-static">
+    <img
+      data-rotating-sketch-image
+      src={initialSketch.src}
+      srcset={initialSketch.srcset}
+      sizes={initialSketch.sizes}
+      alt={initialSketch.alt}
+      width={initialSketch.width}
+      height={initialSketch.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <figcaption data-rotating-sketch-caption>{initialSketch.caption}</figcaption>
+</figure>
+
+<script type="application/json" data-rotating-sketch-data set:html={JSON.stringify(sketches)} />
+
+<script data-astro-rerun>
+  (() => {
+    const storageKey = "lastSketchSrc";
+    const frame = document.querySelector("[data-rotating-sketch]");
+    const image = document.querySelector("[data-rotating-sketch-image]");
+    const caption = document.querySelector("[data-rotating-sketch-caption]");
+    const dataElement = document.querySelector("[data-rotating-sketch-data]");
+
+    if (
+      frame instanceof HTMLElement &&
+      image instanceof HTMLImageElement &&
+      caption instanceof HTMLElement &&
+      dataElement?.textContent
+    ) {
+      const sketches = JSON.parse(dataElement.textContent);
+      const lastSrc = localStorage.getItem(storageKey);
+      const lastIndex = sketches.findIndex((sketch) => sketch.src === lastSrc);
+      const nextIndex = lastIndex === -1 ? 0 : (lastIndex + 1) % sketches.length;
+      const selected = sketches[nextIndex];
+
+      image.src = selected.src;
+      image.srcset = selected.srcset;
+      image.sizes = selected.sizes;
+      image.alt = selected.alt;
+      image.width = selected.width;
+      image.height = selected.height;
+      caption.textContent = selected.caption;
+      localStorage.setItem(storageKey, selected.src);
+    }
+  })();
+</script>
+
+<style>
+  .sketch-image {
+    margin: 0;
+  }
+
+  .sketch-image .image-button {
+    aspect-ratio: 3 / 4;
+    background: var(--color-panel-soft);
+  }
+
+  .sketch-image .image-button-static {
+    cursor: default;
+  }
+
+  .sketch-image .image-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+  }
+
+  .sketch-image figcaption {
+    margin-top: 10px;
+    color: rgba(231, 228, 220, 0.58);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .image-button {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+</style>

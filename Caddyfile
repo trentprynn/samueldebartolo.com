@@ -7,24 +7,27 @@
 # sure your domain's A/AAAA DNS records are properly pointed to
 # this machine's public IP, then replace ":80" below with your
 # domain name.
-
 {
-    default_bind 0.0.0.0
-    admin off
+	default_bind 0.0.0.0
+	admin off
 }
 
 :{$PORT} {
 	root * /var/www/html
-
 	encode gzip
-
-	try_files {path} /index.html
-
+	@trailingSlash path_regexp trailingSlash ^(.+)/$
+	redir @trailingSlash {re.trailingSlash.1} 308
+	try_files {path} {path}/index.html =404
 	file_server
 
-    log {
-        output stdout
-    }
+	handle_errors {
+		rewrite * /{err.status_code}.html
+		file_server
+	}
+
+	log {
+		output stdout
+	}
 }
 
 # Refer to the Caddy docs for more information:

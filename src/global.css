@@ -1,7 +1,107 @@
-@import "tailwindcss";
+:root {
+  color-scheme: dark;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #171715;
+  color: #eeeae1;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --color-background: #171715;
+  --color-surface: #201f1c;
+  --color-surface-tinted: #252821;
+  --color-text: #eeeae1;
+  --color-text-muted: #aaa69b;
+  --color-text-subtle: #77756d;
+  --color-border: rgba(238, 234, 225, 0.16);
+  --color-border-strong: rgba(238, 234, 225, 0.36);
+  --color-accent: #7f9a55;
+  --color-panel: #0e100d;
+  --color-panel-soft: #191e17;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--color-background);
+  overflow-x: clip;
+}
 
 body {
-  background-color: theme("colors.neutral.900");
-  color: var(--color-white);
-  font-weight: var(--font-weight-thin);
+  min-height: 100vh;
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-x: clip;
+}
+
+body::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(238, 234, 225, 0.032) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(238, 234, 225, 0.026) 1px, transparent 1px);
+  background-position: center 0;
+  background-size:
+    100% 96px,
+    min(25vw, 290px) 100%;
+  pointer-events: none;
+  content: "";
+}
+
+button,
+a {
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.34em;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+button {
+  border: 0;
+  padding: 0;
+  font: inherit;
+  background: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+::selection {
+  background: #33402f;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+@media (max-width: 440px) {
+  body {
+    font-size: 12px;
+  }
 }

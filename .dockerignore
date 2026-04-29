@@ -1,0 +1,14 @@
+node_modules
+.astro
+dist
+dist-ssr
+
+.git
+.gitignore
+.DS_Store
+*.log
+*.local
+
+.env
+.env.*
+!.env.example

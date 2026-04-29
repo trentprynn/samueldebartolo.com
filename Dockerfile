@@ -1,14 +1,14 @@
 # Stage 1: Compile and build app
 
-FROM node:22-bullseye-slim AS build
+FROM node:24-bullseye-slim AS build
 
 WORKDIR /usr/local/app
 
 COPY ./ /usr/local/app/
 
-RUN yarn
+RUN npm ci
 
-RUN yarn build
+RUN npm run build
 
 # Stage 2: Serve app with caddy
 
@@ -18,5 +18,6 @@ COPY ./Caddyfile /etc/caddy/Caddyfile
 
 COPY --from=build /usr/local/app/dist /var/www/html
 
-CMD export PORT="${PORT:-80}" \ 
-    && caddy run --config /etc/caddy/Caddyfile
+ENV PORT=80
+
+CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile"]
