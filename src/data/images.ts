@@ -26,7 +26,7 @@ const projectWidths = [640, 960, 1400, 2000];
 export const sketchImages = [
   {
     src: brocconi,
-    alt: "Brocconi sketch",
+    alt: "brocconi sketch",
     caption: "study sketch / brocconi",
     widths: sketchWidths,
     sizes: "(min-width: 900px) 360px, 80vw",
@@ -34,7 +34,7 @@ export const sketchImages = [
   },
   {
     src: catholicChurch,
-    alt: "Catholic Church sketch",
+    alt: "catholic church sketch",
     caption: "study sketch / catholic church",
     widths: sketchWidths,
     sizes: "(min-width: 900px) 360px, 80vw",
@@ -42,7 +42,7 @@ export const sketchImages = [
   },
   {
     src: kunsthausZurich,
-    alt: "Kunsthaus Zurich sketch",
+    alt: "kunsthaus zurich sketch",
     caption: "study sketch / kunsthaus zurich",
     widths: sketchWidths,
     sizes: "(min-width: 900px) 360px, 80vw",
@@ -50,7 +50,7 @@ export const sketchImages = [
   },
   {
     src: stBenedict,
-    alt: "St Benedict sketch",
+    alt: "st benedict sketch",
     caption: "study sketch / st benedict",
     widths: sketchWidths,
     sizes: "(min-width: 900px) 360px, 80vw",
@@ -58,7 +58,7 @@ export const sketchImages = [
   },
   {
     src: thermeVals,
-    alt: "Therme Vals sketch",
+    alt: "therme vals sketch",
     caption: "study sketch / therme vals",
     widths: [240],
     sizes: "(min-width: 900px) 240px, 80vw",
@@ -69,7 +69,7 @@ export const sketchImages = [
 export const projectImages = [
   {
     src: exteriorFrontWithChildren,
-    alt: "Montrose Sanctuary exterior featuring children playing",
+    alt: "montrose sanctuary exterior featuring children playing",
     caption: "front approach",
     widths: projectWidths,
     sizes: "(min-width: 900px) 450px, 100vw",
@@ -77,7 +77,7 @@ export const projectImages = [
   },
   {
     src: interiorPews,
-    alt: "Montrose Sanctuary interior pews",
+    alt: "montrose sanctuary interior pews",
     caption: "sanctuary interior",
     widths: projectWidths,
     sizes: "(min-width: 900px) 450px, 100vw",
@@ -85,7 +85,7 @@ export const projectImages = [
   },
   {
     src: exteriorRear,
-    alt: "Montrose Sanctuary exterior rear",
+    alt: "montrose sanctuary exterior rear",
     caption: "rear elevation",
     widths: projectWidths,
     sizes: "(min-width: 900px) 450px, 100vw",
@@ -93,7 +93,7 @@ export const projectImages = [
   },
   {
     src: interiorPlayRoom,
-    alt: "Montrose Sanctuary children's play room",
+    alt: "montrose sanctuary children's play room",
     caption: "children's room",
     widths: projectWidths,
     sizes: "(min-width: 900px) 450px, 100vw",
@@ -101,7 +101,7 @@ export const projectImages = [
   },
   {
     src: exteriorFrontDark,
-    alt: "Montrose Sanctuary exterior front at night",
+    alt: "montrose sanctuary exterior front at night",
     caption: "evening exterior",
     widths: projectWidths,
     sizes: "(min-width: 900px) 450px, 100vw",
@@ -109,7 +109,7 @@ export const projectImages = [
   },
   {
     src: interiorService,
-    alt: "Montrose Sanctuary interior during service",
+    alt: "montrose sanctuary interior during service",
     caption: "gathering",
     widths: projectWidths,
     sizes: "(min-width: 900px) 450px, 100vw",

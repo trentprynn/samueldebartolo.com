@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import { ExternalLink } from "@lucide/astro";
 import "../global.css";
 
 interface Props {
@@ -16,7 +17,7 @@ const shouldTrackAnalytics = import.meta.env.PROD;
 
 const {
   title = "samuel debartolo",
-  description = "Samuel DeBartolo is a Tucson, Arizona based Architect.",
+  description = "samuel debartolo is a tucson, arizona based architect.",
   noindex = false,
 } = Astro.props;
 
@@ -119,8 +120,14 @@ function isActive(path: string) {
           >
             press
           </a>
-          <a href="https://plynefurniture.com" target="_blank" rel="noreferrer">
+          <a
+            href="https://plynefurniture.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="shop, opens plyne furniture in a new tab"
+          >
             shop
+            <ExternalLink class="external-link-icon" aria-hidden="true" />
           </a>
         </nav>
       </header>
@@ -135,13 +142,13 @@ function isActive(path: string) {
         class="modal-content"
         role="dialog"
         aria-modal="true"
-        aria-label="Image preview"
+        aria-label="image preview"
       >
         <button
           type="button"
           class="modal-close"
           data-preview-close
-          aria-label="Close image preview"
+          aria-label="close image preview"
         >
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M6 6l12 12M18 6L6 18" />
@@ -152,7 +159,7 @@ function isActive(path: string) {
           type="button"
           class="modal-image-button"
           data-preview-close
-          aria-label="Close enlarged image"
+          aria-label="close enlarged image"
         >
           <img data-preview-image alt="" loading="lazy" decoding="async" />
         </button>
@@ -193,15 +200,24 @@ function isActive(path: string) {
         justify-content: flex-end;
         gap: clamp(22px, 4vw, 56px);
         color: var(--color-text-muted);
-        font-size: 11px;
-        letter-spacing: 0.08em;
+        font-size: var(--font-size-micro);
+        letter-spacing: var(--letter-spacing-micro);
         line-height: 1;
-        text-transform: uppercase;
       }
 
       .site-nav a {
         position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.28em;
         padding: 8px 0 11px;
+      }
+
+      .external-link-icon {
+        width: 0.72em;
+        height: 0.72em;
+        color: var(--color-text-subtle);
+        stroke-width: 1.8;
       }
 
       .site-nav a::after {
@@ -326,7 +342,7 @@ function isActive(path: string) {
         }
 
         .site-nav {
-          font-size: 10px;
+          font-size: var(--font-size-micro);
           gap: 8px 16px;
         }
 

@@ -95,7 +95,7 @@ const initialSketch = sketches[0];
 
   .sketch-image .image-button {
     aspect-ratio: 3 / 4;
-    background: var(--color-panel-soft);
+    background: var(--color-background);
   }
 
   .sketch-image .image-button-static {
@@ -106,16 +106,15 @@ const initialSketch = sketches[0];
     width: 100%;
     height: 100%;
     object-fit: contain;
-    padding: 10px;
+    object-position: top center;
   }
 
   .sketch-image figcaption {
     margin-top: 10px;
     color: rgba(231, 228, 220, 0.58);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    line-height: 1.4;
-    text-transform: uppercase;
+    font-size: var(--font-size-micro);
+    letter-spacing: var(--letter-spacing-label);
+    line-height: var(--line-height-micro);
   }
 
   .image-button {

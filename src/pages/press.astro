@@ -5,7 +5,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 
 <SiteLayout
   title="press | samuel debartolo"
-  description="Press, publications, and selected references for Samuel DeBartolo's architecture work."
+  description="press, publications, and selected references for samuel debartolo's architecture work."
 >
   <section class="press-page" aria-labelledby="press-title">
     <div class="section-heading">
@@ -67,7 +67,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     display: grid;
     grid-template-columns: 38px minmax(0, 1fr) minmax(170px, 0.42fr);
     gap: 18px;
-    align-items: start;
+    align-items: center;
     border-bottom: 1px solid var(--color-border);
     padding: 18px 0;
     counter-increment: press-link;
@@ -78,10 +78,9 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 
   .press-link::before {
     color: var(--color-text-subtle);
-    font-size: 10px;
-    letter-spacing: 0.1em;
+    font-size: var(--font-size-micro);
+    letter-spacing: var(--letter-spacing-label);
     line-height: 1.16;
-    transform: translateY(0.24em);
     content: counter(press-link, decimal-leading-zero);
     transition: color 160ms ease;
   }
@@ -96,11 +95,9 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 
   .press-link small {
     color: var(--color-text-muted);
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    line-height: 1.35;
-    padding-top: 0.32em;
-    text-transform: uppercase;
+    font-size: var(--font-size-micro);
+    letter-spacing: var(--letter-spacing-micro);
+    line-height: var(--line-height-small);
     transition: color 160ms ease;
   }
 
@@ -149,6 +146,11 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     .press-link {
       grid-template-columns: 30px 1fr;
       gap: 7px 14px;
+      align-items: start;
+    }
+
+    .press-link::before {
+      transform: translateY(0.34em);
     }
 
     .press-link small {

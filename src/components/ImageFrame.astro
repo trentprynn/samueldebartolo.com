@@ -29,7 +29,7 @@ const preview = expandable
         data-preview-open
         data-preview-src={preview?.src}
         data-preview-alt={image.alt}
-        aria-label={`Open image preview: ${image.alt}`}
+        aria-label={`open image preview: ${image.alt}`}
       >
         <Picture
           src={image.src}
@@ -74,10 +74,9 @@ const preview = expandable
   .image-frame figcaption {
     margin-top: 10px;
     color: var(--color-text-subtle);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    line-height: 1.4;
-    text-transform: uppercase;
+    font-size: var(--font-size-micro);
+    letter-spacing: var(--letter-spacing-label);
+    line-height: var(--line-height-micro);
   }
 
   .image-button {

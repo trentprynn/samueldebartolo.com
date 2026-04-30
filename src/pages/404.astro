@@ -4,7 +4,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 
 <SiteLayout
   title="not found | samuel debartolo"
-  description="The requested page could not be found."
+  description="the requested page could not be found."
   noindex
 >
   <section class="not-found" aria-labelledby="not-found-title">
@@ -60,10 +60,9 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     width: fit-content;
     border-bottom: 1px solid var(--color-border-strong);
     color: var(--color-text);
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    line-height: 1.4;
-    text-transform: uppercase;
+    font-size: var(--font-size-small);
+    letter-spacing: var(--letter-spacing-micro);
+    line-height: var(--line-height-micro);
     transition:
       border-color 160ms ease,
       color 160ms ease;
