@@ -51,10 +51,10 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     margin: 0;
     color: var(--color-text);
     font-family: Helvetica, Arial, sans-serif;
-    font-size: clamp(36px, 4.4vw, 58px);
+    font-size: var(--font-size-display);
     font-weight: 400;
     letter-spacing: 0;
-    line-height: 0.98;
+    line-height: var(--line-height-display);
   }
 
   .press-list {
@@ -160,7 +160,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 
   @media (max-width: 440px) {
     .section-heading h1 {
-      font-size: clamp(32px, 12vw, 46px);
+      font-size: var(--font-size-display-mobile);
     }
   }
 </style>

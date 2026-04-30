@@ -17,8 +17,11 @@
   --color-accent: #7f9a55;
   --color-panel: #0e100d;
   --color-panel-soft: #191e17;
+  --font-size-display: clamp(46px, 5.1vw, 72px);
+  --font-size-display-mobile: clamp(42px, 15vw, 66px);
   --font-size-micro: 12px;
   --font-size-small: 14px;
+  --line-height-display: 0.94;
   --letter-spacing-micro: 0.06em;
   --letter-spacing-label: 0.08em;
   --line-height-micro: 1.4;

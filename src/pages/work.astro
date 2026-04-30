@@ -82,10 +82,10 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     max-width: 7.5em;
     margin: 0;
     font-family: Helvetica, Arial, sans-serif;
-    font-size: clamp(46px, 5.2vw, 74px);
+    font-size: var(--font-size-display);
     font-weight: 400;
     letter-spacing: 0;
-    line-height: 0.96;
+    line-height: var(--line-height-display);
   }
 
   .project-details {
@@ -182,7 +182,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     }
 
     .project-title {
-      font-size: clamp(42px, 15vw, 66px);
+      font-size: var(--font-size-display-mobile);
     }
 
     .image-grid {
