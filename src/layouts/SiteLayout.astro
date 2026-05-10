@@ -73,8 +73,10 @@ function isActive(path: string) {
               window.dataLayer = window.dataLayer || [];
               window.gtag =
                 window.gtag ||
-                function gtag(...args) {
-                  window.dataLayer.push(args);
+                function gtag() {
+                  // Match the Google tag bootstrap shape.
+                  // eslint-disable-next-line prefer-rest-params
+                  window.dataLayer.push(arguments);
                 };
 
               window.gtag("js", new Date());
@@ -82,13 +84,25 @@ function isActive(path: string) {
                 send_page_view: false,
               });
 
-              document.addEventListener("astro:page-load", () => {
+              let lastTrackedPageLocation = "";
+
+              function trackPageView() {
+                const pageLocation = window.location.href;
+
+                if (pageLocation === lastTrackedPageLocation) {
+                  return;
+                }
+
+                lastTrackedPageLocation = pageLocation;
+
                 window.gtag("event", "page_view", {
                   page_title: document.title,
-                  page_location: window.location.href,
-                  page_path: window.location.pathname + window.location.search,
+                  page_location: pageLocation,
                 });
-              });
+              }
+
+              trackPageView();
+              document.addEventListener("astro:page-load", trackPageView);
             }
           </script>
         </>
