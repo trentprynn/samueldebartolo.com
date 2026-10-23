@@ -1,17 +1,17 @@
 ---
+import DetailList from "../components/DetailList.astro";
 import RotatingSketch from "../components/RotatingSketch.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 
 <SiteLayout title="samuel debartolo">
   <section class="studio-intro" aria-labelledby="studio-title">
-    <div class="studio-heading">
-      <p class="eyebrow">architecture studio</p>
-      <h1 id="studio-title" class="display-title">samuel debartolo</h1>
-    </div>
+    <h1 id="studio-title" class="visually-hidden">
+      samuel debartolo architecture studio
+    </h1>
 
     <div class="studio-record">
-      <dl class="studio-facts" aria-label="studio details">
+      <DetailList label="studio details">
         <div>
           <dt>location</dt>
           <dd>tucson, arizona</dd>
@@ -30,15 +30,15 @@ import SiteLayout from "../layouts/SiteLayout.astro";
             </a>
           </dd>
         </div>
-      </dl>
+      </DetailList>
 
       <p class="studio-statement">
-        a small architecture practice working through atmosphere, restraint,
-        material character, and careful reuse.
+        a small architecture practice working through atmosphere, restraint, and
+        essential human experience
       </p>
     </div>
 
-    <aside class="sketch-panel" aria-label="rotating study sketch">
+    <aside class="sketch-panel" aria-label="study sketch">
       <RotatingSketch />
     </aside>
   </section>
@@ -47,134 +47,44 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 <style>
   .studio-intro {
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    column-gap: clamp(18px, 2.7vw, 32px);
-    row-gap: 40px;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
     align-items: start;
-  }
-
-  .studio-heading {
-    grid-column: 1 / span 4;
-    display: grid;
-    gap: clamp(28px, 4vw, 48px);
-  }
-
-  .display-title {
-    max-width: 8.2em;
-    margin: 0;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: var(--font-size-display);
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: var(--line-height-display);
+    gap: var(--layout-gap);
   }
 
   .studio-record {
-    grid-column: 5 / span 4;
     display: grid;
-    gap: clamp(28px, 4vw, 52px);
-  }
-
-  .studio-facts {
-    margin: 0;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .studio-facts div {
-    display: grid;
-    grid-template-columns: 86px minmax(0, 1fr);
-    gap: 16px;
-    align-items: center;
-    border-bottom: 1px solid var(--color-border);
-    padding: 13px 0;
-  }
-
-  .studio-facts dt {
-    color: var(--color-text-subtle);
-    font-size: var(--font-size-micro);
-    letter-spacing: var(--letter-spacing-label);
-    line-height: var(--line-height-small);
-  }
-
-  .studio-facts dd {
-    min-width: 0;
-    margin: 0;
-    color: var(--color-text);
-    font-size: var(--font-size-small);
-    line-height: var(--line-height-small);
-    overflow-wrap: anywhere;
-  }
-
-  .studio-facts a {
-    border-bottom: 1px solid transparent;
-    overflow-wrap: anywhere;
-  }
-
-  .studio-facts a:hover {
-    border-bottom-color: currentColor;
+    gap: var(--section-space);
+    padding-top: 24px;
   }
 
   .studio-statement {
-    max-width: 28ch;
+    max-width: 32ch;
     margin: 0;
     color: var(--color-text-muted);
-    font-size: clamp(21px, 2vw, 28px);
-    font-weight: 400;
-    line-height: 1.18;
+    font-size: var(--font-size-lead);
+    line-height: 1.3;
+    text-wrap: pretty;
   }
 
   .sketch-panel {
-    grid-column: 10 / span 3;
     width: 100%;
+    max-width: 360px;
+    justify-self: end;
   }
 
-  @media (max-width: 980px) {
+  @media (max-width: 900px) {
     .studio-intro {
-      grid-template-columns: repeat(8, minmax(0, 1fr));
-    }
-
-    .studio-heading {
-      grid-column: 1 / span 3;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--section-space);
     }
 
     .studio-record {
-      grid-column: 4 / span 4;
+      padding-top: 0;
     }
 
     .sketch-panel {
-      grid-column: 4 / span 5;
-    }
-  }
-
-  @media (max-width: 760px) {
-    .studio-intro {
-      grid-template-columns: 1fr;
-      row-gap: 32px;
-    }
-
-    .studio-heading,
-    .studio-record,
-    .sketch-panel {
-      grid-column: auto;
-    }
-
-    .display-title {
-      font-size: var(--font-size-display-mobile);
-    }
-
-    .studio-statement {
-      font-size: clamp(20px, 7vw, 27px);
-    }
-
-    .sketch-panel {
-      width: min(100%, 430px);
-    }
-  }
-
-  @media (max-width: 440px) {
-    .studio-facts div {
-      grid-template-columns: 1fr;
-      gap: 5px;
+      justify-self: center;
     }
   }
 </style>

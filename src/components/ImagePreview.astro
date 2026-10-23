@@ -1,0 +1,130 @@
+---
+import { X } from "@lucide/astro";
+---
+
+<dialog class="image-preview" data-image-modal aria-label="image preview">
+  <button
+    type="button"
+    class="preview-close"
+    data-preview-close
+    aria-label="close image preview"
+    autofocus
+  >
+    <X size={24} stroke-width={1.5} aria-hidden="true" />
+  </button>
+  <button
+    type="button"
+    class="preview-image"
+    data-preview-close
+    aria-label="close enlarged image"
+  >
+    <img data-preview-image alt="" decoding="async" />
+  </button>
+</dialog>
+
+<style>
+  .image-preview {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    border: 0;
+    padding: 72px var(--site-gutter) 32px;
+    background: transparent;
+    color: var(--color-text);
+  }
+
+  .image-preview[open] {
+    display: grid;
+    place-items: center;
+  }
+
+  .image-preview::backdrop {
+    background: rgba(23, 23, 21, 0.97);
+  }
+
+  :global(body:has(.image-preview[open])) {
+    overflow: hidden;
+  }
+
+  .preview-close {
+    position: absolute;
+    top: 16px;
+    right: var(--site-gutter);
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    color: var(--color-text-muted);
+    cursor: pointer;
+  }
+
+  .preview-close:hover {
+    color: var(--color-text);
+  }
+
+  .preview-image {
+    display: block;
+    max-width: 100%;
+    cursor: zoom-out;
+  }
+
+  .preview-image img {
+    max-width: 100%;
+    max-height: calc(100dvh - 104px);
+    object-fit: contain;
+  }
+</style>
+
+<script>
+  function previewElements() {
+    const dialog =
+      document.querySelector<HTMLDialogElement>("[data-image-modal]");
+    const image = dialog?.querySelector<HTMLImageElement>(
+      "[data-preview-image]",
+    );
+    return dialog && image ? { dialog, image } : undefined;
+  }
+
+  function closePreview() {
+    previewElements()?.dialog.close();
+  }
+
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) return;
+    const preview = previewElements();
+    if (!preview) return;
+
+    if (
+      event.target === preview.dialog ||
+      event.target.closest("[data-preview-close]")
+    ) {
+      closePreview();
+      return;
+    }
+
+    const trigger = event.target.closest<HTMLElement>("[data-preview-open]");
+    if (!trigger?.dataset.previewSrc) return;
+    if (
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    )
+      return;
+
+    event.preventDefault();
+    preview.image.src = trigger.dataset.previewSrc;
+    preview.image.alt = trigger.dataset.previewAlt ?? "";
+    // Safari does not always focus clicked links; give the dialog a return target.
+    trigger.focus({ preventScroll: true });
+    preview.dialog.showModal();
+  });
+
+  // Delegation survives ClientRouter swaps; native dialogs handle focus and Escape.
+  document.addEventListener("astro:before-swap", closePreview);
+</script>

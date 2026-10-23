@@ -1,0 +1,35 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  label?: string;
+}
+
+const { id, title, label } = Astro.props;
+---
+
+<header class="page-heading">
+  {label && <p>{label}</p>}
+  <h1 id={id}>{title}</h1>
+</header>
+
+<style>
+  .page-heading {
+    display: grid;
+    gap: 16px;
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-text-subtle);
+    font-size: var(--font-size-small);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: var(--font-size-title);
+    font-weight: 400;
+    line-height: var(--line-height-heading);
+    overflow-wrap: anywhere;
+  }
+</style>

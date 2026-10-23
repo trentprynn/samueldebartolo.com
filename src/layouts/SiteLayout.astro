@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
+import wordmark from "../assets/brand/wordmark.png";
+import ImagePreview from "../components/ImagePreview.astro";
 import { ExternalLink } from "@lucide/astro";
 import "../global.css";
 
@@ -10,8 +13,9 @@ interface Props {
 }
 
 const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
-const canonicalUrl = new URL(Astro.url.pathname, "https://samueldebartolo.com");
-const socialImageUrl = "https://samueldebartolo.com/social_1200_630.jpg";
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const socialImageUrl = new URL("/social_1200_630.jpg", Astro.site);
+const socialImageAlt = "black and white architectural study sketch";
 const analyticsMeasurementId = "G-RW1SEYQ6C9";
 const shouldTrackAnalytics = import.meta.env.PROD;
 
@@ -33,6 +37,9 @@ function isActive(path: string) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="application-name" content="samuel debartolo" />
+    <meta name="apple-mobile-web-app-title" content="samuel debartolo" />
+    <meta name="theme-color" content="#171715" />
     {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content="website" />
@@ -40,11 +47,16 @@ function isActive(path: string) {
     <meta property="og:title" content={title} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={socialImageAlt} />
     <meta property="og:description" content={description} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
     <style is:inline>
       /* Keep first paint dark before the global stylesheet loads. */
       :root {
@@ -57,60 +69,62 @@ function isActive(path: string) {
         background: #171715;
       }
     </style>
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/logo192.jpg" />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" href="/logo512.jpg" type="image/jpeg" sizes="512x512" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
     <link rel="manifest" href="/manifest.json" />
-    {
-      shouldTrackAnalytics && (
-        <>
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${analyticsMeasurementId}`}
-          />
-          <script define:vars={{ analyticsMeasurementId }}>
-            if (!window.sdAnalyticsReady) {
-              window.sdAnalyticsReady = true;
-              window.dataLayer = window.dataLayer || [];
-              window.gtag =
-                window.gtag ||
-                function gtag() {
-                  // Match the Google tag bootstrap shape.
-                  // eslint-disable-next-line prefer-rest-params
-                  window.dataLayer.push(arguments);
-                };
+    {shouldTrackAnalytics && (
+      <>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${analyticsMeasurementId}`}
+        />
+        <script define:vars={{ analyticsMeasurementId }}>
+          if (!window.sdAnalyticsReady) {
+            window.sdAnalyticsReady = true;
+            window.dataLayer = window.dataLayer || [];
+            window.gtag =
+              window.gtag ||
+              function gtag() {
+                // Match the Google tag bootstrap shape.
+                // eslint-disable-next-line prefer-rest-params
+                window.dataLayer.push(arguments);
+              };
 
-              window.gtag("js", new Date());
-              window.gtag("config", analyticsMeasurementId, {
-                send_page_view: false,
-              });
+            window.gtag("js", new Date());
+            window.gtag("config", analyticsMeasurementId, {
+              send_page_view: false,
+            });
 
-              let lastTrackedPageLocation = "";
+            let lastTrackedPageLocation = "";
 
-              function trackPageView() {
-                const pageLocation = window.location.href;
+            function trackPageView() {
+              const pageLocation = window.location.href;
 
-                if (pageLocation === lastTrackedPageLocation) {
-                  return;
-                }
-
-                lastTrackedPageLocation = pageLocation;
-
-                window.gtag("event", "page_view", {
-                  page_title: document.title,
-                  page_location: pageLocation,
-                });
+              if (pageLocation === lastTrackedPageLocation) {
+                return;
               }
 
-              trackPageView();
-              document.addEventListener("astro:page-load", trackPageView);
+              lastTrackedPageLocation = pageLocation;
+
+              window.gtag("event", "page_view", {
+                page_title: document.title,
+                page_location: pageLocation,
+              });
             }
-          </script>
-        </>
-      )
-    }
+
+            trackPageView();
+            document.addEventListener("astro:page-load", trackPageView);
+          }
+        </script>
+      </>
+    )}
     <ClientRouter fallback="swap" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">
+      skip to content
+    </a>
     <div class="site-shell">
       <header class="site-header">
         <a
@@ -119,7 +133,15 @@ function isActive(path: string) {
           aria-label="samuel debartolo home"
           transition:persist="site-mark"
         >
-          <img src="/logo.svg" alt="" />
+          <Image
+            src={wordmark}
+            alt=""
+            width={320}
+            widths={[280, 320, 560, 640, 960]}
+            sizes="(max-width: 760px) 280px, 320px"
+            format="png"
+            loading="eager"
+          />
         </a>
         <nav class="site-nav" aria-label="primary navigation">
           <a href="/" aria-current={isActive("/") ? "page" : undefined}>
@@ -146,108 +168,60 @@ function isActive(path: string) {
         </nav>
       </header>
 
-      <main>
+      <main id="main-content" tabindex="-1">
         <slot />
       </main>
     </div>
 
-    <div class="modal-overlay" data-image-modal hidden>
-      <div
-        class="modal-content"
-        role="dialog"
-        aria-modal="true"
-        aria-label="image preview"
-      >
-        <button
-          type="button"
-          class="modal-close"
-          data-preview-close
-          aria-label="close image preview"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M6 6l12 12M18 6L6 18" />
-          </svg>
-        </button>
-
-        <button
-          type="button"
-          class="modal-image-button"
-          data-preview-close
-          aria-label="close enlarged image"
-        >
-          <img data-preview-image alt="" loading="lazy" decoding="async" />
-        </button>
-      </div>
-    </div>
+    <ImagePreview />
 
     <style>
       .site-shell {
-        width: min(calc(100% - 48px), 1180px);
+        width: min(calc(100% - var(--site-gutter) * 2), var(--site-max-width));
         min-height: 100vh;
         margin: 0 auto;
-        padding: 24px 0 80px;
+        padding: 32px 0 var(--page-space);
       }
 
       .site-header {
-        display: grid;
-        grid-template-columns: 96px 1fr;
-        align-items: start;
-        gap: 24px;
-        border-bottom: 1px solid var(--color-border);
-        padding-bottom: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
       }
 
       .site-mark {
-        display: grid;
-        width: 28px;
-        height: 28px;
-        place-items: center;
+        display: block;
+        flex: 0 1 320px;
+        width: 320px;
+        max-width: 100%;
       }
 
       .site-mark img {
         width: 100%;
-        height: 100%;
+        height: auto;
       }
 
       .site-nav {
         display: flex;
-        justify-content: flex-end;
-        gap: clamp(22px, 4vw, 56px);
+        flex-shrink: 0;
+        align-items: center;
+        gap: 32px;
         color: var(--color-text-muted);
-        font-size: var(--font-size-micro);
-        letter-spacing: var(--letter-spacing-micro);
-        line-height: 1;
+        font-size: var(--font-size-small);
       }
 
       .site-nav a {
-        position: relative;
         display: inline-flex;
         align-items: center;
-        gap: 0.28em;
-        padding: 8px 0 11px;
+        gap: 6px;
+        min-height: 44px;
       }
 
       .external-link-icon {
-        width: 0.72em;
-        height: 0.72em;
-        color: var(--color-text-subtle);
-        stroke-width: 1.8;
-      }
-
-      .site-nav a::after {
-        position: absolute;
-        right: 0;
-        bottom: 2px;
-        left: 0;
-        height: 1px;
-        background: currentColor;
-        content: "";
-        opacity: 0;
-      }
-
-      .site-nav a:hover::after,
-      .site-nav a[aria-current="page"]::after {
-        opacity: 1;
+        width: 12px;
+        height: 12px;
+        stroke-width: 1.5;
       }
 
       .site-nav a[aria-current="page"] {
@@ -255,184 +229,43 @@ function isActive(path: string) {
       }
 
       main {
-        padding-top: clamp(38px, 5vw, 64px);
+        padding-top: var(--page-space);
       }
 
-      .modal-overlay {
+      .skip-link {
         position: fixed;
-        z-index: 50;
-        inset: 0;
-        display: grid;
-        place-items: center;
-        background: rgba(17, 17, 13, 0.94);
-        padding: 28px;
+        top: 12px;
+        left: var(--site-gutter);
+        z-index: 100;
+        padding: 12px 16px;
+        background: var(--color-text);
+        color: var(--color-background);
+        transform: translateY(-200%);
       }
 
-      .modal-content {
-        position: relative;
-        width: min(100%, 1180px);
-        outline: none;
-      }
-
-      .modal-close {
-        position: fixed;
-        top: 24px;
-        right: 24px;
-        z-index: 1;
-        display: grid;
-        width: 34px;
-        height: 34px;
-        place-items: center;
-        border: 1px solid rgba(238, 234, 225, 0.24);
-        background: rgba(14, 16, 13, 0.72);
-        color: rgba(238, 234, 225, 0.78);
-        cursor: pointer;
-        font-size: 24px;
-        transition:
-          border-color 160ms ease,
-          color 160ms ease,
-          background 160ms ease;
-      }
-
-      .modal-close:hover,
-      .modal-close:focus-visible {
-        border-color: rgba(238, 234, 225, 0.46);
-        background: rgba(14, 16, 13, 0.92);
-        color: var(--color-text);
-      }
-
-      .modal-close svg {
-        width: 18px;
-        height: 18px;
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 1.8;
-      }
-
-      .modal-image-button {
-        display: grid;
-        width: 100%;
-        max-height: 88vh;
-        place-items: center;
-        cursor: zoom-out;
-      }
-
-      .modal-image-button img {
-        max-width: 100%;
-        max-height: 88vh;
-        object-fit: contain;
+      .skip-link:focus {
+        transform: translateY(0);
       }
 
       @media (max-width: 760px) {
-        .site-shell {
-          width: min(calc(100% - 28px), 1180px);
-          padding-top: 20px;
+        .site-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 28px;
         }
 
-        .site-header {
-          display: flex;
-          align-items: flex-start;
+        .site-mark {
+          flex-basis: auto;
+          width: 280px;
+        }
+
+        .site-nav {
+          width: 100%;
+          max-width: 360px;
           justify-content: space-between;
           gap: 16px;
         }
-
-        .site-nav {
-          flex: 1;
-          justify-content: flex-end;
-          flex-wrap: wrap;
-          gap: 8px 18px;
-          min-width: 0;
-        }
-
-        main {
-          padding-top: 42px;
-        }
-      }
-
-      @media (max-width: 440px) {
-        .site-shell {
-          width: min(calc(100% - 24px), 1180px);
-          padding-bottom: 56px;
-        }
-
-        .site-nav {
-          font-size: var(--font-size-micro);
-          gap: 8px 16px;
-        }
-
-        .modal-overlay {
-          padding: 14px;
-        }
-
-        .modal-close {
-          top: 14px;
-          right: 14px;
-        }
       }
     </style>
-
-    <script>
-      (() => {
-        if (document.documentElement.dataset.previewModalReady === "true") return;
-
-        document.documentElement.dataset.previewModalReady = "true";
-
-        function previewElements() {
-          const modal = document.querySelector("[data-image-modal]");
-          const image = document.querySelector("[data-preview-image]");
-
-          if (!(modal instanceof HTMLElement) || !(image instanceof HTMLImageElement)) {
-            return;
-          }
-
-          return { image, modal };
-        }
-
-        function closePreview() {
-          const preview = previewElements();
-
-          if (!preview) return;
-
-          preview.modal.hidden = true;
-          preview.image.removeAttribute("src");
-          preview.image.alt = "";
-        }
-
-        document.addEventListener("click", (event) => {
-          const target = event.target;
-
-          if (!(target instanceof Element)) return;
-
-          if (target.closest("[data-preview-close]")) {
-            closePreview();
-            return;
-          }
-
-          const preview = previewElements();
-
-          if (target === preview?.modal) {
-            closePreview();
-            return;
-          }
-
-          const trigger = target.closest("[data-preview-open]");
-
-          if (!(trigger instanceof HTMLElement) || !preview) return;
-
-          const src = trigger.dataset.previewSrc;
-          const alt = trigger.dataset.previewAlt ?? "";
-
-          if (!src) return;
-
-          preview.image.src = src;
-          preview.image.alt = alt;
-          preview.modal.hidden = false;
-        });
-
-        document.addEventListener("keydown", (event) => {
-          if (event.key === "Escape") closePreview();
-        });
-      })();
-    </script>
   </body>
 </html>

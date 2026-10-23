@@ -2,17 +2,22 @@
 import { getImage } from "astro:assets";
 import { sketchImages, type SiteImage } from "../data/images";
 
+// Match the home page's sketch panel, including its 360px maximum width.
+const sizes =
+  "(max-width: 360px) calc(100vw - 40px), (max-width: 408px) calc(100vw - 48px), (min-width: 901px) and (max-width: 1142px) calc((100vw - 152px) * 4 / 11), 360px";
+
 async function sketchData(image: SiteImage) {
+  const widths = [
+    ...new Set([360, 540].map((width) => Math.min(width, image.src.width))),
+  ];
   const variants = await Promise.all(
-    image.widths
-      .filter((width) => width <= image.src.width)
-      .map((width) =>
-        getImage({
-          src: image.src,
-          width,
-          format: image.format,
-        }),
-      ),
+    widths.map((width) =>
+      getImage({
+        src: image.src,
+        width,
+        format: "png",
+      }),
+    ),
   );
   const fallback = variants.at(-1);
 
@@ -24,7 +29,6 @@ async function sketchData(image: SiteImage) {
     alt: image.alt,
     caption: image.caption,
     height: fallback.attributes.height,
-    sizes: image.sizes,
     src: fallback.src,
     srcset: variants
       .map((variant) => `${variant.src} ${variant.attributes.width}w`)
@@ -43,21 +47,33 @@ const initialSketch = sketches[0];
       data-rotating-sketch-image
       src={initialSketch.src}
       srcset={initialSketch.srcset}
-      sizes={initialSketch.sizes}
+      sizes={sizes}
       alt={initialSketch.alt}
       width={initialSketch.width}
       height={initialSketch.height}
-      loading="lazy"
+      loading="eager"
       decoding="async"
     />
   </div>
   <figcaption data-rotating-sketch-caption>{initialSketch.caption}</figcaption>
 </figure>
 
-<script type="application/json" data-rotating-sketch-data set:html={JSON.stringify(sketches)} />
+<script
+  type="application/json"
+  data-rotating-sketch-data
+  set:html={JSON.stringify(sketches)}
+/>
+<script>
+  interface Sketch {
+    src: string;
+    srcset: string;
+    alt: string;
+    caption: string;
+    width: number;
+    height: number;
+  }
 
-<script data-astro-rerun>
-  (() => {
+  document.addEventListener("astro:page-load", () => {
     const storageKey = "lastSketchSrc";
     const frame = document.querySelector("[data-rotating-sketch]");
     const image = document.querySelector("[data-rotating-sketch-image]");
@@ -70,22 +86,32 @@ const initialSketch = sketches[0];
       caption instanceof HTMLElement &&
       dataElement?.textContent
     ) {
-      const sketches = JSON.parse(dataElement.textContent);
-      const lastSrc = localStorage.getItem(storageKey);
+      const sketches: Sketch[] = JSON.parse(dataElement.textContent);
+      if (!sketches.length) return;
+      let lastSrc = null;
+      try {
+        lastSrc = localStorage.getItem(storageKey);
+      } catch {
+        // The initial sketch still works when browser storage is unavailable.
+      }
       const lastIndex = sketches.findIndex((sketch) => sketch.src === lastSrc);
-      const nextIndex = lastIndex === -1 ? 0 : (lastIndex + 1) % sketches.length;
+      const nextIndex =
+        lastIndex === -1 ? 0 : (lastIndex + 1) % sketches.length;
       const selected = sketches[nextIndex];
 
-      image.src = selected.src;
       image.srcset = selected.srcset;
-      image.sizes = selected.sizes;
+      image.src = selected.src;
       image.alt = selected.alt;
       image.width = selected.width;
       image.height = selected.height;
       caption.textContent = selected.caption;
-      localStorage.setItem(storageKey, selected.src);
+      try {
+        localStorage.setItem(storageKey, selected.src);
+      } catch {
+        // Remembering the previous sketch is optional.
+      }
     }
-  })();
+  });
 </script>
 
 <style>
@@ -95,7 +121,6 @@ const initialSketch = sketches[0];
 
   .sketch-image .image-button {
     aspect-ratio: 3 / 4;
-    background: var(--color-background);
   }
 
   .sketch-image .image-button-static {
@@ -110,11 +135,9 @@ const initialSketch = sketches[0];
   }
 
   .sketch-image figcaption {
-    margin-top: 10px;
-    color: rgba(231, 228, 220, 0.58);
-    font-size: var(--font-size-micro);
-    letter-spacing: var(--letter-spacing-label);
-    line-height: var(--line-height-micro);
+    margin-top: 16px;
+    color: var(--color-text-subtle);
+    font-size: var(--font-size-small);
   }
 
   .image-button {

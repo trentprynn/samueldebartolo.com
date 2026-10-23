@@ -1,13 +1,12 @@
 # Stage 1: Compile and build app
 
-FROM node:24-bullseye-slim AS build
+FROM node:24-bookworm-slim AS build
 
 WORKDIR /usr/local/app
 
-COPY ./ /usr/local/app/
-
+COPY package.json package-lock.json ./
 RUN npm ci
-
+COPY . .
 RUN npm run build
 
 # Stage 2: Serve app with caddy

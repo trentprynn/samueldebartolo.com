@@ -15,54 +15,33 @@ export type SiteImage = {
   src: ImageMetadata;
   alt: string;
   caption: string;
-  widths: number[];
-  sizes: string;
-  format: "jpeg" | "png";
 };
-
-const sketchWidths = [360, 540];
-const projectWidths = [640, 960, 1400, 2000];
 
 export const sketchImages = [
   {
     src: brocconi,
     alt: "brocconi sketch",
     caption: "study sketch / brocconi",
-    widths: sketchWidths,
-    sizes: "(min-width: 900px) 360px, 80vw",
-    format: "png",
   },
   {
     src: catholicChurch,
     alt: "catholic church sketch",
     caption: "study sketch / catholic church",
-    widths: sketchWidths,
-    sizes: "(min-width: 900px) 360px, 80vw",
-    format: "png",
   },
   {
     src: kunsthausZurich,
     alt: "kunsthaus zurich sketch",
     caption: "study sketch / kunsthaus zurich",
-    widths: sketchWidths,
-    sizes: "(min-width: 900px) 360px, 80vw",
-    format: "png",
   },
   {
     src: stBenedict,
     alt: "st benedict sketch",
     caption: "study sketch / st benedict",
-    widths: sketchWidths,
-    sizes: "(min-width: 900px) 360px, 80vw",
-    format: "png",
   },
   {
     src: thermeVals,
     alt: "therme vals sketch",
     caption: "study sketch / therme vals",
-    widths: [240],
-    sizes: "(min-width: 900px) 240px, 80vw",
-    format: "png",
   },
 ] satisfies SiteImage[];
 
@@ -71,48 +50,30 @@ export const projectImages = [
     src: exteriorFrontWithChildren,
     alt: "montrose sanctuary exterior featuring children playing",
     caption: "front approach",
-    widths: projectWidths,
-    sizes: "(min-width: 900px) 450px, 100vw",
-    format: "jpeg",
   },
   {
     src: interiorPews,
     alt: "montrose sanctuary interior pews",
     caption: "sanctuary interior",
-    widths: projectWidths,
-    sizes: "(min-width: 900px) 450px, 100vw",
-    format: "jpeg",
   },
   {
     src: exteriorRear,
     alt: "montrose sanctuary exterior rear",
     caption: "rear elevation",
-    widths: projectWidths,
-    sizes: "(min-width: 900px) 450px, 100vw",
-    format: "jpeg",
   },
   {
     src: interiorPlayRoom,
     alt: "montrose sanctuary children's play room",
     caption: "children's room",
-    widths: projectWidths,
-    sizes: "(min-width: 900px) 450px, 100vw",
-    format: "jpeg",
   },
   {
     src: exteriorFrontDark,
     alt: "montrose sanctuary exterior front at night",
     caption: "evening exterior",
-    widths: projectWidths,
-    sizes: "(min-width: 900px) 450px, 100vw",
-    format: "jpeg",
   },
   {
     src: interiorService,
     alt: "montrose sanctuary interior during service",
     caption: "gathering",
-    widths: projectWidths,
-    sizes: "(min-width: 900px) 450px, 100vw",
-    format: "jpeg",
   },
 ] satisfies SiteImage[];

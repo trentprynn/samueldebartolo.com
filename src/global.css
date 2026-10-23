@@ -1,31 +1,30 @@
 :root {
   color-scheme: dark;
   font-family: Helvetica, Arial, sans-serif;
-  background: #171715;
-  color: #eeeae1;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   --color-background: #171715;
   --color-surface: #201f1c;
-  --color-surface-tinted: #252821;
   --color-text: #eeeae1;
   --color-text-muted: #aaa69b;
-  --color-text-subtle: #77756d;
-  --color-border: rgba(238, 234, 225, 0.16);
-  --color-border-strong: rgba(238, 234, 225, 0.36);
-  --color-accent: #7f9a55;
-  --color-panel: #0e100d;
-  --color-panel-soft: #191e17;
-  --font-size-display: clamp(46px, 5.1vw, 72px);
-  --font-size-display-mobile: clamp(42px, 15vw, 66px);
-  --font-size-micro: 12px;
+  --color-text-subtle: #96938a;
+  --color-accent: #8fa76b;
   --font-size-small: 14px;
-  --line-height-display: 0.94;
-  --letter-spacing-micro: 0.06em;
-  --letter-spacing-label: 0.08em;
-  --line-height-micro: 1.4;
-  --line-height-small: 1.35;
+  --font-size-body: 16px;
+  --font-size-prose: 18px;
+  --font-size-entry: 24px;
+  --font-size-lead: 28px;
+  --font-size-title: 40px;
+  --line-height-heading: 1.15;
+  --line-height-body: 1.5;
+  --site-max-width: 1180px;
+  --site-gutter: 40px;
+  --layout-gap: 72px;
+  --page-space: 88px;
+  --section-space: 72px;
+  background: var(--color-background);
+  color: var(--color-text);
 }
 
 * {
@@ -35,44 +34,27 @@
 html {
   min-height: 100%;
   background: var(--color-background);
-  overflow-x: clip;
 }
 
 body {
   min-height: 100vh;
   margin: 0;
-  background: var(--color-background);
-  color: var(--color-text);
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  line-height: 1.5;
-  overflow-x: clip;
-}
-
-body::before {
-  position: fixed;
-  z-index: -1;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(238, 234, 225, 0.032) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(238, 234, 225, 0.026) 1px, transparent 1px);
-  background-position: center 0;
-  background-size:
-    100% 96px,
-    min(25vw, 290px) 100%;
-  pointer-events: none;
-  content: "";
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: 0;
 }
 
 button,
 a {
   color: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
   text-decoration: none;
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.34em;
+  text-underline-offset: 0.3em;
+  transition: color 160ms ease;
 }
 
 a:hover {
@@ -86,6 +68,11 @@ button {
   background: transparent;
 }
 
+:focus-visible {
+  outline: 1px solid var(--color-text-muted);
+  outline-offset: 6px;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -97,19 +84,52 @@ img {
 
 ::selection {
   background: #33402f;
+  color: var(--color-text);
 }
 
-.eyebrow {
-  margin: 0;
-  color: var(--color-accent);
-  font-size: var(--font-size-micro);
-  font-weight: 500;
-  letter-spacing: var(--letter-spacing-label);
-  line-height: var(--line-height-micro);
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
-@media (max-width: 440px) {
-  body {
-    font-size: 12px;
+@media (max-width: 900px) {
+  :root {
+    --site-gutter: 32px;
+    --layout-gap: 40px;
+    --page-space: 64px;
+    --section-space: 56px;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --site-gutter: 24px;
+    --page-space: 48px;
+    --section-space: 40px;
+    --font-size-title: 32px;
+    --font-size-lead: 24px;
+    --font-size-entry: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --site-gutter: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
